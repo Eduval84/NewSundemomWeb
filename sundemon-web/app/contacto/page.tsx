@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "@/components/sections/contact-form";
 import { FAQ, Footer, Header, Location } from "@/components/sections/landing-page";
 
 export const metadata: Metadata = {
@@ -31,12 +32,10 @@ export default function ContactPage() {
           <div className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-6 sm:p-8">
             <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Ficha de propuesta</p>
             <h2 className="mt-3 font-display text-2xl text-earth-700">Qué puedes contarnos</h2>
-            <ul className="mt-6 space-y-4 font-sans text-sm leading-6 text-ink-900/70">
-              <li><strong className="text-earth-700">La idea:</strong> qué quieres representar y por qué.</li>
-              <li><strong className="text-earth-700">La ubicación:</strong> zona del cuerpo y tamaño aproximado.</li>
-              <li><strong className="text-earth-700">Tus referencias:</strong> imágenes, estilos o piezas que te inspiran.</li>
-              <li><strong className="text-earth-700">Tu disponibilidad:</strong> días y horarios que te funcionan.</li>
-            </ul>
+            <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">Rellena el formulario y cuéntanos lo que tienes en mente. Te responderemos en un plazo máximo de 72 horas.</p>
+            <div className="mt-7">
+              <ContactForm />
+            </div>
           </div>
         </section>
         <Location />

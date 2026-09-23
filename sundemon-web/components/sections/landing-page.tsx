@@ -435,7 +435,6 @@ export function LandingPage() {
         <EssentialNavigation />
         <Philosophy />
         <Location />
-        <FAQ />
       </main>
       <Footer />
     </>

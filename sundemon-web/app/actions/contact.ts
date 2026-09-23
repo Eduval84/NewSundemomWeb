@@ -6,7 +6,13 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre."),
   email: z.string().trim().email("Introduce un email válido."),
-  phone: z.string().trim().max(30, "El teléfono es demasiado largo.").optional(),
+  phone: z
+    .string()
+    .trim()
+    .regex(
+      /^(?:(?:\+34|0034)[ .-]?)?[6789]\d{2}[ .-]?\d{3}[ .-]?\d{3}$/,
+      "Introduce un teléfono español válido.",
+    ),
   bodyArea: z.string().trim().max(120, "La zona del cuerpo es demasiado larga.").optional(),
   style: z.string().trim().max(120, "El estilo es demasiado largo.").optional(),
   availability: z.string().trim().max(120, "La disponibilidad es demasiado larga.").optional(),

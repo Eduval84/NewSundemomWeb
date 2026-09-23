@@ -12,7 +12,7 @@ export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContact, initialState);
 
   return (
-    <form action={formAction} className="space-y-5" noValidate>
+    <form action={formAction} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
           Nombre completo *
@@ -25,8 +25,18 @@ export function ContactForm() {
           {state.fieldErrors?.email ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.email[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Teléfono / WhatsApp
-          <input name="phone" type="tel" autoComplete="tel" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
+          Teléfono / WhatsApp *
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            inputMode="tel"
+            pattern="(?:(?:\+34|0034)[ .-]?)?[6789][0-9]{2}[ .-]?[0-9]{3}[ .-]?[0-9]{3}"
+            title="Introduce un teléfono español válido, por ejemplo 612 345 678."
+            className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30"
+          />
+          {state.fieldErrors?.phone ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.phone[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
           Zona del cuerpo

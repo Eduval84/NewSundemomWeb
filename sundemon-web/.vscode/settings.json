@@ -1,5 +1,5 @@
 {
   "terminal.integrated.env.windows": {
-    "PATH": "C:\\Users\\usuario\\AppData\\Local\\Author Software\\nvm\\installs\\v20.9.0;${env:PATH}"
+    "PATH": "${env:LOCALAPPDATA}\\Author Software\\nvm\\installs\\v20.9.0;${env:PATH}"
   }
 }

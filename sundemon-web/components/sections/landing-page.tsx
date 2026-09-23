@@ -60,6 +60,20 @@ const galleryItems = [
   ["Precisión y conexión", "Sesiones íntimas y cuidadas", "object-[center_45%]"],
 ];
 
+const philosophyValues = [
+  ["01", "Idea", "Cada tatuaje comienza con una historia y una conversación en la que puedas sentirte escuchado."],
+  ["02", "Diseño", "Damos forma al concepto con intención, proporción y respeto por tu anatomía."],
+  ["03", "Experiencia", "El proceso se construye con calma, desde la primera consulta hasta la última cura."],
+  ["04", "Confianza", "Acompañamiento honesto para que tu pieza se sienta tan tuya como el recuerdo que la inspira."],
+];
+
+const faqs = [
+  ["¿Cuánto tiempo tardáis en responder mi solicitud?", "Respondemos todas las consultas en un plazo máximo de 24 horas laborables. Revisamos cada propuesta con calma antes de contestarte."],
+  ["¿Tengo que llevar algo preparado para la valoración?", "No es necesario. Una idea, una referencia o una conversación son suficientes para empezar a construir la propuesta."],
+  ["¿Puedo acudir directamente al estudio?", "Trabajamos con cita previa para poder dedicarte el tiempo y la atención que merece cada proyecto."],
+  ["¿Qué ocurre si no tengo una imagen exacta?", "Es precisamente ahí donde empieza nuestro trabajo: escuchamos lo que quieres transmitir y lo convertimos en una pieza propia."],
+];
+
 function Mark() {
   return (
     <span aria-hidden="true" className="text-copper-500">
@@ -194,7 +208,7 @@ function EssentialNavigation() {
 
 function Process() {
   return (
-    <section id="estudio" aria-labelledby="process-title" className="border-y border-sand-300/60 bg-sand-200/45">
+    <section aria-labelledby="process-title" className="border-y border-sand-300/60 bg-sand-200/45">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
         <h2 id="process-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Un tatuaje empieza mucho antes de la aguja</h2>
@@ -211,6 +225,74 @@ function Process() {
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+function Philosophy() {
+  return (
+    <section id="estudio" aria-labelledby="philosophy-title" className="border-b border-sand-300/60">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
+        <div>
+          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Filosofía de autor</p>
+          <h2 id="philosophy-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Lejos de los clichés y el ruido.</h2>
+          <p className="mt-5 font-sans text-sm leading-7 text-ink-900/70">
+            Sundemon nace como un refugio de diseño contemporáneo donde cada proyecto se aborda con dedicación individual. Diseñamos a medida y entendemos el tatuaje como una pieza de arte permanente cuya historia comienza en la conversación.
+          </p>
+          <p className="mt-4 font-sans text-sm leading-7 text-ink-900/70">
+            Un espacio para mirar despacio, decidir con claridad y llevarte algo que tenga sentido mucho después de salir del estudio.
+          </p>
+          <span className="mt-7 inline-flex rounded-full border border-sand-300 bg-sand-100 px-3 py-2 font-sans text-[10px] font-semibold tracking-[0.08em] text-earth-700 uppercase">
+            <Mark /> Atención personalizada en la ciudad de Cervantes
+          </span>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {philosophyValues.map(([number, title, description]) => (
+            <article key={number} className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-5">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xl text-copper-500">{number}</span>
+                <Mark />
+              </div>
+              <h3 className="mt-7 font-display text-xl text-earth-700">{title}</h3>
+              <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Team() {
+  return (
+    <section aria-labelledby="team-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="flex flex-wrap items-end justify-between gap-5">
+        <div>
+          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El equipo Sundemon</p>
+          <h2 id="team-title" className="mt-3 font-display text-3xl text-earth-700">Personas detrás de cada pieza</h2>
+        </div>
+        <p className="max-w-sm font-sans text-sm leading-6 text-ink-900/65">Una red de artistas y colaboradores que comparte una forma precisa y humana de trabajar.</p>
+      </div>
+      <div className="mt-9 grid gap-5 md:grid-cols-3">
+        <article className="overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
+          <div className="relative aspect-[4/3] overflow-hidden bg-sand-200">
+            <Image src="/images/estudio.jpeg" alt="Artista de Sundemon Tattoo Studio trabajando en Alcalá de Henares" fill className="object-cover object-[center_65%]" sizes="(max-width: 768px) 100vw, 33vw" />
+          </div>
+          <div className="p-5">
+            <p className="font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Dirección artística</p>
+            <h3 className="mt-2 font-display text-xl text-earth-700">Sundemon Studio</h3>
+            <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">Diseño, tatuaje y acompañamiento en un mismo lugar.</p>
+          </div>
+        </article>
+        {["Artista residente", "Colaboraciones"].map((title) => (
+          <article key={title} className="flex min-h-80 flex-col items-center justify-center rounded-lg border border-sand-300/70 bg-sand-200/45 p-6 text-center">
+            <span className="flex size-12 items-center justify-center rounded-full border border-sand-300 bg-sand-100 font-display text-xl text-copper-500">✦</span>
+            <p className="mt-7 font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Próximamente</p>
+            <h3 className="mt-2 font-display text-xl text-earth-700">{title}</h3>
+            <p className="mt-3 max-w-xs font-sans text-sm leading-6 text-ink-900/65">Nuevas miradas que se suman al estudio con la misma sensibilidad y cuidado.</p>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -269,6 +351,28 @@ function Location() {
           </div>
           <span className="absolute bottom-5 left-5 font-sans text-[10px] tracking-[0.1em] text-earth-500 uppercase">Centro histórico · Alcalá de Henares</span>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  return (
+    <section aria-labelledby="faq-title" className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="text-center">
+        <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Antes de escribirnos</p>
+        <h2 id="faq-title" className="mt-3 font-display text-3xl text-earth-700">Preguntas frecuentes sobre la consulta</h2>
+      </div>
+      <div className="mt-10 divide-y divide-sand-300/70 border-y border-sand-300/70">
+        {faqs.map(([question, answer]) => (
+          <details key={question} className="group py-5">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-base text-earth-700 marker:hidden">
+              {question}
+              <span className="font-sans text-xl font-light text-copper-500 transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p className="max-w-2xl pt-4 font-sans text-sm leading-6 text-ink-900/65">{answer}</p>
+          </details>
+        ))}
       </div>
     </section>
   );
@@ -334,8 +438,11 @@ export function LandingPage() {
         <Testimonials />
         <EssentialNavigation />
         <Process />
+        <Philosophy />
+        <Team />
         <Gallery />
         <Location />
+        <FAQ />
       </main>
       <Footer />
     </>

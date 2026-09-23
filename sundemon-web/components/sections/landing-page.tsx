@@ -73,8 +73,14 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-sand-300/50 bg-[#F7F4EE]/90 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Sundemon Tattoo Studio, inicio">
-          <Image src="/images/logo-mark.jpg" alt="" width={36} height={24} className="h-6 w-9 object-cover object-center mix-blend-multiply" />
-          <span className="font-display text-lg tracking-[0.16em] text-earth-700">SUNDEMON</span>
+          <Image
+            src="/images/logo.png"
+            alt="Sundemon Tattoo Studio"
+            width={156}
+            height={58}
+            className="h-10 w-[136px] object-contain mix-blend-multiply sm:h-11 sm:w-[150px]"
+            priority
+          />
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase md:flex">
           <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="#tatuajes">Tatuajes</Link>

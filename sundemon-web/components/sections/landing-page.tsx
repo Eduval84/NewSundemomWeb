@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GalleryFilter } from "@/components/sections/gallery-filter";
 
 const testimonials = [
   {
@@ -51,13 +52,6 @@ const processSteps = [
   ["02", "Consulta & Co-diseño", "Aterrizamos el concepto y construimos una propuesta pensada para ti."],
   ["03", "La Sesión", "El día llega con calma, precisión y todo preparado para disfrutar del proceso."],
   ["04", "Curación & Control", "Te acompañamos después para cuidar la pieza y verla evolucionar contigo."],
-];
-
-const galleryItems = [
-  ["Fine Line Botánico", "Trazo delicado con intención", "object-[center_65%]"],
-  ["Micro-trazo arquitectónico", "Inspirado en Alcalá de Henares", "object-[center_30%]"],
-  ["La consulta personalizada", "Ideas que toman forma", "object-[center_80%]"],
-  ["Precisión y conexión", "Sesiones íntimas y cuidadas", "object-[center_45%]"],
 ];
 
 const philosophyValues = [
@@ -306,25 +300,9 @@ export function Gallery() {
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Archivo Sundemon</p>
           <h2 id="gallery-title" className="mt-3 font-display text-3xl text-earth-700">Tatuajes reales, personas reales</h2>
         </div>
-        <div className="flex gap-2 font-sans text-xs">
-          <span className="rounded-full bg-earth-700 px-3 py-2 text-white-warm">Todos</span>
-          <span className="rounded-full border border-sand-300 px-3 py-2 text-earth-700">Fine line</span>
-          <span className="rounded-full border border-sand-300 px-3 py-2 text-earth-700">Micro-trazo</span>
-        </div>
       </div>
-      <div className="mt-9 grid gap-5 sm:grid-cols-2">
-        {galleryItems.map(([title, description, objectPosition], index) => (
-          <article key={title} className={`group relative overflow-hidden rounded-lg bg-sand-200 ${index === 0 ? "sm:row-span-2" : ""}`}>
-            <div className={`relative ${index === 0 ? "aspect-[4/5] h-full" : "aspect-[1.55]"}`}>
-              <Image src="/images/estudio.jpeg" alt={`${title}, trabajo de tatuaje de Sundemon en Alcalá de Henares`} fill className={`object-cover brightness-[0.78] transition-transform duration-300 group-hover:scale-105 ${objectPosition}`} sizes="(max-width: 640px) 100vw, 50vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent" />
-              <div className="absolute inset-x-5 bottom-5 text-white-warm">
-                <h3 className="font-display text-xl">{title}</h3>
-                <p className="mt-1 font-sans text-xs text-sand-200">{description}</p>
-              </div>
-            </div>
-          </article>
-        ))}
+      <div className="mt-6">
+        <GalleryFilter />
       </div>
     </section>
   );

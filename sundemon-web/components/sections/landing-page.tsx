@@ -119,7 +119,7 @@ function Hero() {
               <em className="text-earth-500">En tu piel.</em>
             </h1>
             <p className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-ink-900/75 sm:text-lg">
-              Un espacio donde las ideas se convierten en tatuajes pensados para ti. Calma, arquitectura lúcida y precisión milimétrica en el centro histórico.
+              Un espacio donde las ideas se convierten en tatuajes pensados para ti. Calma, arquitectura lúcida y precisión milimétrica muy cerca del centro histórico.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
               <Link href="/contacto" className="rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
@@ -317,17 +317,35 @@ export function Location() {
           <h2 id="location-title" className="mt-3 font-display text-3xl text-earth-700">Un santuario creativo en la ciudad de Cervantes</h2>
           <p className="mt-5 font-sans text-sm leading-7 text-ink-900/70">Un espacio tranquilo en el centro histórico de Alcalá de Henares, pensado para que el tiempo se detenga y la conversación encuentre su forma.</p>
           <address className="mt-8 not-italic font-sans text-sm leading-7 text-earth-700">
-            <strong className="font-semibold">Calle Ferraz 3</strong><br />
-            28801 · Alcalá de Henares, Madrid<br />
+            <strong className="font-semibold">Calle de Ferraz 3</strong><br />
+            28807 · Alcalá de Henares, Madrid<br />
             <span className="text-ink-900/60">L–V · 11:00–20:00 · Con cita previa</span>
           </address>
-        </div>
-        <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-xl border border-sand-300 bg-sand-100 p-8 shadow-warm">
-          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(90deg, transparent 49%, #b9784c 50%, transparent 51%), linear-gradient(transparent 49%, #b9784c 50%, transparent 51%)", backgroundSize: "64px 64px" }} />
-          <div className="relative z-10 rounded-full border border-copper-500 bg-earth-700 px-6 py-5 text-center text-white-warm shadow-warm">
-            <Mark /><br /><span className="font-sans text-xs font-semibold tracking-[0.1em] uppercase">Sundemon</span>
+          <div className="mt-7 flex flex-wrap items-center gap-4">
+            <Link
+              href="/contacto"
+              className="rounded-full bg-earth-700 px-5 py-3 font-sans text-xs font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500"
+            >
+              Reservar una consulta
+            </Link>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Calle+de+Ferraz+3%2C+28807+Alcal%C3%A1+de+Henares%2C+Madrid"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs font-semibold text-earth-700 underline decoration-sand-300 underline-offset-4 transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500"
+            >
+              Abrir indicaciones ↗
+            </a>
           </div>
-          <span className="absolute bottom-5 left-5 font-sans text-[10px] tracking-[0.1em] text-earth-500 uppercase">Centro histórico · Alcalá de Henares</span>
+        </div>
+        <div className="relative min-h-[280px] overflow-hidden rounded-xl border border-sand-300 bg-sand-100 shadow-warm">
+          <iframe
+            title="Mapa de ubicación de Sundemon Tattoo Studio en Calle de Ferraz 3, Alcalá de Henares"
+            src="https://www.google.com/maps?q=Calle+de+Ferraz+3%2C+28807+Alcal%C3%A1+de+Henares%2C+Madrid&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 h-full w-full border-0 grayscale-[0.2] contrast-[0.9] sepia-[0.12]"
+          />
         </div>
       </div>
     </section>
@@ -400,7 +418,7 @@ export function LandingPage() {
             address: {
               "@type": "PostalAddress",
               streetAddress: "Calle Ferraz 3",
-              postalCode: "28801",
+              postalCode: "28807",
               addressLocality: "Alcalá de Henares",
               addressRegion: "Madrid",
               addressCountry: "ES",

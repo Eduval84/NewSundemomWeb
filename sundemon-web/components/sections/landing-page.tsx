@@ -132,7 +132,6 @@ function Hero() {
               Espacio de quietud y luz natural · Calle Ferraz 3
             </figcaption>
           </div>
-          <span className="absolute -bottom-4 -left-4 flex size-16 items-center justify-center rounded-full border border-sand-300 bg-sand-100 font-display text-2xl text-earth-700">✦</span>
         </figure>
       </div>
     </section>

@@ -416,8 +416,6 @@ export function LandingPage() {
         <Testimonials />
         <EssentialNavigation />
         <Philosophy />
-        <Team />
-        <Gallery />
         <Location />
         <FAQ />
       </main>

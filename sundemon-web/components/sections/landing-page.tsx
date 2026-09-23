@@ -26,21 +26,21 @@ const essentialLinks = [
   {
     title: "Tatuajes",
     description: "Descubre nuestro proceso, estilos y piezas que cuentan historias.",
-    href: "#tatuajes",
+    href: "/tatuajes",
     imageClass: "object-[center_65%]",
     label: "01 / Archivo",
   },
   {
     title: "Sundemon",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
-    href: "#estudio",
+    href: "/estudio",
     imageClass: "object-[center_35%]",
     label: "02 / Espacio",
   },
   {
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
-    href: "#contacto",
+    href: "/contacto",
     imageClass: "object-[center_80%]",
     label: "03 / Diálogo",
   },
@@ -82,7 +82,7 @@ function Mark() {
   );
 }
 
-function Header() {
+export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-sand-300/50 bg-[#F7F4EE]/90 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -97,11 +97,11 @@ function Header() {
           />
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase md:flex">
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="#tatuajes">Tatuajes</Link>
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="#estudio">Sundemon</Link>
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="#contacto">Contacto</Link>
+          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
+          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
+          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
         </nav>
-        <Link href="#contacto" className="rounded-full bg-earth-700 px-4 py-3 font-sans text-xs font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+        <Link href="/contacto" className="rounded-full bg-earth-700 px-4 py-3 font-sans text-xs font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
           Cuéntanos tu idea
         </Link>
       </div>
@@ -128,10 +128,10 @@ function Hero() {
               Un espacio donde las ideas se convierten en tatuajes pensados para ti. Calma, arquitectura lúcida y precisión milimétrica en el centro histórico.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
-              <Link href="#contacto" className="rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+              <Link href="/contacto" className="rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
                 Cuéntanos tu idea <span aria-hidden="true">↗</span>
               </Link>
-              <Link href="#tatuajes" className="font-sans text-sm font-semibold text-earth-700 underline decoration-sand-300 underline-offset-8 transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+              <Link href="/tatuajes" className="font-sans text-sm font-semibold text-earth-700 underline decoration-sand-300 underline-offset-8 transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500">
                 Ver trabajos
               </Link>
             </div>
@@ -152,7 +152,7 @@ function Hero() {
   );
 }
 
-function Testimonials() {
+export function Testimonials() {
   return (
     <section aria-labelledby="testimonials-title" className="bg-sand-200/60">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
@@ -181,7 +181,7 @@ function Testimonials() {
   );
 }
 
-function EssentialNavigation() {
+export function EssentialNavigation() {
   return (
     <section aria-labelledby="essential-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Explora el estudio</p>
@@ -206,7 +206,7 @@ function EssentialNavigation() {
   );
 }
 
-function Process() {
+export function Process() {
   return (
     <section aria-labelledby="process-title" className="border-y border-sand-300/60 bg-sand-200/45">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
@@ -230,7 +230,7 @@ function Process() {
   );
 }
 
-function Philosophy() {
+export function Philosophy() {
   return (
     <section id="estudio" aria-labelledby="philosophy-title" className="border-b border-sand-300/60">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
@@ -264,7 +264,7 @@ function Philosophy() {
   );
 }
 
-function Team() {
+export function Team() {
   return (
     <section aria-labelledby="team-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="flex flex-wrap items-end justify-between gap-5">
@@ -298,7 +298,7 @@ function Team() {
   );
 }
 
-function Gallery() {
+export function Gallery() {
   return (
     <section id="tatuajes" aria-labelledby="gallery-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="flex flex-wrap items-end justify-between gap-6">
@@ -330,7 +330,7 @@ function Gallery() {
   );
 }
 
-function Location() {
+export function Location() {
   return (
     <section aria-labelledby="location-title" className="border-y border-sand-300/60 bg-sand-200/50">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
@@ -356,7 +356,7 @@ function Location() {
   );
 }
 
-function FAQ() {
+export function FAQ() {
   return (
     <section aria-labelledby="faq-title" className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="text-center">
@@ -378,7 +378,7 @@ function FAQ() {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer id="contacto" className="bg-ink-900 text-white-warm">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
@@ -391,9 +391,9 @@ function Footer() {
         <div className="lg:pt-2">
           <p className="font-display text-xl tracking-[0.14em]">SUNDEMON</p>
           <nav aria-label="Enlaces del pie de página" className="mt-7 flex flex-col gap-3 font-sans text-sm text-sand-300">
-            <Link className="hover:text-white-warm" href="#tatuajes">Tatuajes</Link>
-            <Link className="hover:text-white-warm" href="#estudio">El estudio</Link>
-            <Link className="hover:text-white-warm" href="#contacto">Contacto</Link>
+            <Link className="hover:text-white-warm" href="/tatuajes">Tatuajes</Link>
+            <Link className="hover:text-white-warm" href="/estudio">El estudio</Link>
+            <Link className="hover:text-white-warm" href="/contacto">Contacto</Link>
           </nav>
         </div>
       </div>

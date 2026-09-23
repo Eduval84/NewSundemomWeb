@@ -415,7 +415,6 @@ export function LandingPage() {
         <Hero />
         <Testimonials />
         <EssentialNavigation />
-        <Process />
         <Philosophy />
         <Team />
         <Gallery />

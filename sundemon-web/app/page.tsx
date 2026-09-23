@@ -1,9 +1,5 @@
-import { ProcessWorkflow } from "@/components/sections/process-workflow";
+import { LandingPage } from "@/components/sections/landing-page";
 
 export default function Home() {
-  return (
-    <main>
-      <ProcessWorkflow />
-    </main>
-  );
+  return <LandingPage />;
 }

@@ -1,27 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GalleryFilter } from "@/components/sections/gallery-filter";
-
-const testimonials = [
-  {
-    quote:
-      "Desde la primera conversación entendieron exactamente lo que quería plasmar.",
-    author: "Elena R.",
-    location: "Alcalá de Henares",
-  },
-  {
-    quote:
-      "La delicadeza del trazo y el cuidado durante toda la sesión hicieron que disfrutara del proceso.",
-    author: "Marco V.",
-    location: "Madrid",
-  },
-  {
-    quote:
-      "Un estudio tranquilo, preciso y humano. El resultado supera lo que imaginaba.",
-    author: "Gabriela N.",
-    location: "Guadalajara",
-  },
-];
+import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
 
 const essentialLinks = [
   {
@@ -147,32 +127,7 @@ function Hero() {
 }
 
 export function Testimonials() {
-  return (
-    <section aria-labelledby="testimonials-title" className="bg-sand-200/60">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Testimonios reales</p>
-            <h2 id="testimonials-title" className="mt-3 font-display text-3xl text-earth-700">La voz de quienes confían su piel</h2>
-          </div>
-          <span className="rounded-full border border-sand-300 bg-white-warm/70 px-4 py-2 font-sans text-xs text-earth-700">★ 5.0 · Valoración en Alcalá de Henares / Madrid</span>
-        </div>
-        <div className="mt-9 grid gap-4 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <article key={testimonial.author} className="flex min-h-48 flex-col justify-between rounded-lg bg-white-warm/80 p-6">
-              <div>
-                <p className="text-xs tracking-[0.3em] text-copper-500">★★★★★</p>
-                <blockquote className="mt-5 font-display text-base leading-7 text-earth-700">“{testimonial.quote}”</blockquote>
-              </div>
-              <footer className="mt-7 flex justify-between font-sans text-[10px] font-semibold tracking-[0.1em] text-ink-900/55 uppercase">
-                <span>{testimonial.author}</span><span>{testimonial.location}</span>
-              </footer>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <TestimonialsCarousel />;
 }
 
 export function EssentialNavigation() {

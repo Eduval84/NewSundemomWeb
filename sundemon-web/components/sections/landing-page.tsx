@@ -8,6 +8,7 @@ const essentialLinks = [
     title: "Tatuajes",
     description: "Descubre nuestro proceso, estilos y piezas que cuentan historias.",
     href: "/tatuajes",
+    image: "/images/Tatuajes.avif",
     imageClass: "object-[center_65%]",
     label: "01 / Archivo",
   },
@@ -15,6 +16,7 @@ const essentialLinks = [
     title: "Sundemon",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
     href: "/estudio",
+    image: "/images/Sundemom.avif",
     imageClass: "object-[center_35%]",
     label: "02 / Espacio",
   },
@@ -22,6 +24,7 @@ const essentialLinks = [
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
     href: "/contacto",
+    image: "/images/Contacto.avif",
     imageClass: "object-[center_80%]",
     label: "03 / Diálogo",
   },
@@ -140,7 +143,7 @@ export function EssentialNavigation() {
         {essentialLinks.map((item) => (
           <Link key={item.title} href={item.href} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500">
             <div className="relative aspect-[1.35] overflow-hidden bg-sand-200">
-              <Image src="/images/estudio.jpeg" alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 768px) 100vw, 33vw" />
+              <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 768px) 100vw, 33vw" />
               <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
             </div>
             <div className="p-5">

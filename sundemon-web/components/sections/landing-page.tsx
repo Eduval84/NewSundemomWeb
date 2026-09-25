@@ -113,7 +113,7 @@ function Hero() {
         </div>
         <figure className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand-200 shadow-warm">
-            <Image src="/images/estudio.jpeg" alt="Estudio de tatuajes Sundemon en Calle Ferraz, Alcalá de Henares" fill priority className="object-cover" sizes="(max-width: 1024px) 100vw, 42vw" />
+            <Image src="/images/estudio.jpeg" alt="Estudio de tatuajes Sundemon en Calle Ferraz, Alcalá de Henares" fill priority loading="eager" className="object-cover" sizes="(max-width: 1024px) 100vw, 42vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent" />
             <figcaption className="absolute inset-x-5 bottom-5 font-sans text-xs leading-5 text-white-warm">
               <span className="block font-semibold tracking-[0.12em] text-sand-200 uppercase">El estudio</span>

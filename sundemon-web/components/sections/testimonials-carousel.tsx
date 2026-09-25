@@ -252,20 +252,13 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-function getVisibleCount() {
-  if (typeof window === "undefined") return 1;
-  if (window.innerWidth >= 1024) return 3;
-  if (window.innerWidth >= 640) return 2;
-  return 1;
-}
-
 export function TestimonialsCarousel() {
   const [visibleCount, setVisibleCount] = useState(1);
   const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
     const updateVisibleCount = () => {
-      const nextCount = getVisibleCount();
+      const nextCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
       setVisibleCount(nextCount);
       setStartIndex((currentIndex) => Math.min(currentIndex, testimonials.length - nextCount));
     };

@@ -122,7 +122,8 @@ Estética: Minimalista, lujo discreto, arquitectura sólida, tonos cálidos/aren
    - Usa siempre `<Image />` de `next/image` con dimensiones explícitas o `fill`.
 
 ### Reglas de implementación con github
-   - Vamos a trabajar con conventional commits con lo que despues de cada cambio haremos un commit indicando que se ha realizado
+   - Vamos a trabajar con conventional commits; después de cada cambio haremos un commit indicando qué se ha realizado.
+   - Los commits serán atómicos: cada uno debe contener una única tarea o cambio funcional relacionado, sin mezclar cambios independientes.
 
 ### Reglas de implementación generales
    - vamos a tener una cobertura de test para las acciones que vayamos implementando, si podemos las haremos siempre en TDD

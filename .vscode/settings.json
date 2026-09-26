@@ -1,4 +1,5 @@
 {
+  "chat.agentHost.devContainer.enabled": true,
   "terminal.integrated.env.windows": {
     "PATH": "${env:LOCALAPPDATA}\\Author Software\\nvm\\installs\\v20.9.0;${env:PATH}"
   }

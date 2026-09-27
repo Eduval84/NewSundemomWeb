@@ -135,10 +135,10 @@ export function Testimonials() {
   return <TestimonialsCarousel />;
 }
 
-function EssentialCard({ item }: { item: (typeof essentialLinks)[number] }) {
+function EssentialCard({ item, horizontal = false }: { item: (typeof essentialLinks)[number]; horizontal?: boolean }) {
   return (
-    <Link href={item.href} className="group flex min-h-0 flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500">
-      <div className="relative aspect-[1.35] shrink-0 overflow-hidden bg-sand-200 lg:aspect-auto lg:flex-1">
+    <Link href={item.href} className={`group flex min-h-0 flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500 ${horizontal ? "lg:flex-row-reverse" : ""}`}>
+      <div className={`relative aspect-[1.35] shrink-0 overflow-hidden bg-sand-200 ${horizontal ? "lg:aspect-auto lg:min-h-[150px] lg:w-[34%]" : "lg:aspect-auto lg:flex-1"}`}>
         <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 1024px) 100vw, 33vw" />
         <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
       </div>
@@ -159,7 +159,7 @@ export function EssentialNavigation() {
       <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_2fr] lg:items-stretch">
         <EssentialCard item={essentialLinks[0]} />
         <div className="grid gap-5 lg:grid-rows-2">
-          {essentialLinks.slice(1).map((item) => <EssentialCard key={item.title} item={item} />)}
+          {essentialLinks.slice(1).map((item) => <EssentialCard key={item.title} item={item} horizontal />)}
         </div>
       </div>
     </section>
@@ -295,10 +295,6 @@ export function Footer() {
           <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">¿Tienes una idea en mente?</h2>
           <p className="mt-5 max-w-lg font-sans text-sm leading-7 text-sand-300">Cuéntanosla. Las mejores piezas suelen comenzar con una conversación sencilla.</p>
           <Link href="mailto:hola@sundemon.com" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
-          <address className="mt-8 not-italic font-sans text-sm leading-6 text-sand-300">
-            Calle de Ferraz 3<br />
-            28807 · Alcalá de Henares, Madrid
-          </address>
         </div>
         <div className="lg:pt-2">
           <p className="font-display text-xl tracking-[0.14em]">SUNDEMON</p>
@@ -307,6 +303,10 @@ export function Footer() {
             <Link className="hover:text-white-warm" href="/estudio">El estudio</Link>
             <Link className="hover:text-white-warm" href="/contacto">Contacto</Link>
           </nav>
+          <address className="mt-8 not-italic font-sans text-sm leading-6 text-sand-300">
+            Calle de Ferraz 3<br />
+            28807 · Alcalá de Henares, Madrid
+          </address>
         </div>
       </div>
       <div className="border-t border-white-warm/15">

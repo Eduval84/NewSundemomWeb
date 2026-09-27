@@ -189,7 +189,7 @@ export function Philosophy() {
     <section id="estudio" aria-labelledby="philosophy-title" className="border-b border-sand-300/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div>
-          <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Lejos de los clichés y el ruido.</h2>
+          <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Cómo creamos tu tatuaje: escucha, precisión y acompañamiento</h2>
         </div>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {philosophyValues.map(([number, title, description]) => (

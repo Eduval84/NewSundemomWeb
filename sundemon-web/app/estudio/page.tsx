@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Header, Location, Philosophy, Team } from "@/components/sections/landing-page";
+import { Footer, Header, Philosophy, Team } from "@/components/sections/landing-page";
 
 export const metadata: Metadata = {
   title: "Sundemon Tattoo Studio | Espacio creativo en Alcalá de Henares",
@@ -25,7 +25,6 @@ export default function StudioPage() {
         </section>
         <Philosophy />
         <Team />
-        <Location />
       </main>
       <Footer />
     </>

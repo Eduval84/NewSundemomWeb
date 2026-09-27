@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/sections/contact-form";
-import { FAQ, Footer, Header, Location } from "@/components/sections/landing-page";
+import { FAQ, Footer, Header } from "@/components/sections/landing-page";
 
 export const metadata: Metadata = {
   title: "Contacto y citas | Sundemon Tattoo Studio",
@@ -38,7 +38,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        <Location />
         <FAQ />
       </main>
       <Footer />

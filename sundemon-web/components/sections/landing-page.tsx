@@ -232,7 +232,7 @@ export function Team() {
         </div>
         <p className="max-w-sm font-sans text-sm leading-6 text-ink-900/65">Una red de artistas y colaboradores que comparte una forma precisa y humana de trabajar.</p>
       </div>
-      <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
         {artists.map(([name, image]) => (
           <article key={name} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
             <div className="relative aspect-[4/5] overflow-hidden bg-sand-200">

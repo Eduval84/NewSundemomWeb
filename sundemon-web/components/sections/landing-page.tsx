@@ -138,13 +138,12 @@ export function Testimonials() {
 export function EssentialNavigation() {
   return (
     <section aria-labelledby="essential-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Explora el estudio</p>
-      <h2 id="essential-title" className="mt-3 font-display text-3xl text-earth-700">Navegación esencial</h2>
+      <h2 id="essential-title" className="font-display text-3xl text-earth-700">Navegación esencial</h2>
       <p className="mt-3 max-w-xl font-sans text-sm leading-6 text-ink-900/65">Tres puertas de entrada para comprender nuestra forma de entender el arte corporal contemporáneo.</p>
-      <div className="mt-9 grid gap-5 md:grid-cols-3">
+      <div className="mt-9 grid gap-5 md:grid-cols-3 lg:grid-cols-[1.15fr_0.85fr] lg:grid-rows-2">
         {essentialLinks.map((item) => (
-          <Link key={item.title} href={item.href} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500">
-            <div className="relative aspect-[1.35] overflow-hidden bg-sand-200">
+          <Link key={item.title} href={item.href} className={`group flex flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500 ${item.title === "Tatuajes" ? "lg:row-span-2" : ""}`}>
+            <div className={`relative aspect-[1.35] overflow-hidden bg-sand-200 ${item.title === "Tatuajes" ? "lg:flex-1 lg:aspect-auto" : ""}`}>
               <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 768px) 100vw, 33vw" />
               <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
             </div>

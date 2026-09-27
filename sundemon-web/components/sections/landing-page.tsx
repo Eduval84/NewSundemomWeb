@@ -135,25 +135,32 @@ export function Testimonials() {
   return <TestimonialsCarousel />;
 }
 
+function EssentialCard({ item }: { item: (typeof essentialLinks)[number] }) {
+  return (
+    <Link href={item.href} className="group flex min-h-0 flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500">
+      <div className="relative aspect-[1.35] shrink-0 overflow-hidden bg-sand-200 lg:aspect-auto lg:flex-1">
+        <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 1024px) 100vw, 33vw" />
+        <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
+      </div>
+      <div className="p-5">
+        <h3 className="font-display text-xl text-earth-700">{item.title}</h3>
+        <p className="mt-2 font-sans text-sm leading-6 text-ink-900/65">{item.description}</p>
+        <span className="mt-5 block font-sans text-xs font-semibold text-forest-700">Descubrir <span aria-hidden="true">↗</span></span>
+      </div>
+    </Link>
+  );
+}
+
 export function EssentialNavigation() {
   return (
     <section aria-labelledby="essential-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <h2 id="essential-title" className="font-display text-3xl text-earth-700">Navegación esencial</h2>
       <p className="mt-3 max-w-xl font-sans text-sm leading-6 text-ink-900/65">Tres puertas de entrada para comprender nuestra forma de entender el arte corporal contemporáneo.</p>
-      <div className="mt-9 grid gap-5 md:grid-cols-3 lg:grid-cols-[1.15fr_0.85fr] lg:grid-rows-2">
-        {essentialLinks.map((item) => (
-          <Link key={item.title} href={item.href} className={`group flex flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500 ${item.title === "Tatuajes" ? "lg:row-span-2" : ""}`}>
-            <div className={`relative aspect-[1.35] overflow-hidden bg-sand-200 ${item.title === "Tatuajes" ? "lg:flex-1 lg:aspect-auto" : ""}`}>
-              <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 768px) 100vw, 33vw" />
-              <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
-            </div>
-            <div className="p-5">
-              <h3 className="font-display text-xl text-earth-700">{item.title}</h3>
-              <p className="mt-2 font-sans text-sm leading-6 text-ink-900/65">{item.description}</p>
-              <span className="mt-5 block font-sans text-xs font-semibold text-forest-700">Descubrir <span aria-hidden="true">↗</span></span>
-            </div>
-          </Link>
-        ))}
+      <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_2fr] lg:items-stretch">
+        <EssentialCard item={essentialLinks[0]} />
+        <div className="grid gap-5 lg:grid-rows-2">
+          {essentialLinks.slice(1).map((item) => <EssentialCard key={item.title} item={item} />)}
+        </div>
       </div>
     </section>
   );

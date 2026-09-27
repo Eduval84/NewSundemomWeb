@@ -45,6 +45,14 @@ const philosophyValues = [
   ["04", "Confianza", "Acompañamiento honesto para que tu pieza se sienta tan tuya como el recuerdo que la inspira."],
 ];
 
+const artists = [
+  ["David", "/images/Artistas/David.avif"],
+  ["Enrique", "/images/Artistas/Enrique.avif"],
+  ["Jhoan", "/images/Artistas/Jhoan.avif"],
+  ["Paula", "/images/Artistas/Paula.avif"],
+  ["Yaiza", "/images/Artistas/Yaiza.avif"],
+];
+
 const faqs = [
   ["¿Cuánto tiempo tardáis en responder mi solicitud?", "Respondemos todas las consultas en un plazo máximo de 24 horas laborables. Revisamos cada propuesta con calma antes de contestarte."],
   ["¿Tengo que llevar algo preparado para la valoración?", "No es necesario. Una idea, una referencia o una conversación son suficientes para empezar a construir la propuesta."],
@@ -224,23 +232,16 @@ export function Team() {
         </div>
         <p className="max-w-sm font-sans text-sm leading-6 text-ink-900/65">Una red de artistas y colaboradores que comparte una forma precisa y humana de trabajar.</p>
       </div>
-      <div className="mt-9 grid gap-5 md:grid-cols-3">
-        <article className="overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
-          <div className="relative aspect-[4/3] overflow-hidden bg-sand-200">
-            <Image src="/images/estudio.jpeg" alt="Artista de Sundemon Tattoo Studio trabajando en Alcalá de Henares" fill className="object-cover object-[center_65%]" sizes="(max-width: 768px) 100vw, 33vw" />
-          </div>
-          <div className="p-5">
-            <p className="font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Dirección artística</p>
-            <h3 className="mt-2 font-display text-xl text-earth-700">Sundemon Studio</h3>
-            <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">Diseño, tatuaje y acompañamiento en un mismo lugar.</p>
-          </div>
-        </article>
-        {["Artista residente", "Colaboraciones"].map((title) => (
-          <article key={title} className="flex min-h-80 flex-col items-center justify-center rounded-lg border border-sand-300/70 bg-sand-200/45 p-6 text-center">
-            <span className="flex size-12 items-center justify-center rounded-full border border-sand-300 bg-sand-100 font-display text-xl text-copper-500">✦</span>
-            <p className="mt-7 font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Próximamente</p>
-            <h3 className="mt-2 font-display text-xl text-earth-700">{title}</h3>
-            <p className="mt-3 max-w-xs font-sans text-sm leading-6 text-ink-900/65">Nuevas miradas que se suman al estudio con la misma sensibilidad y cuidado.</p>
+      <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {artists.map(([name, image]) => (
+          <article key={name} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
+            <div className="relative aspect-[4/5] overflow-hidden bg-sand-200">
+              <Image src={image} alt={`${name}, artista de Sundemon Tattoo Studio`} fill className={`object-center object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-110 ${name === "Enrique" ? "object-[center_20%]" : ""}`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+            </div>
+            <div className="p-5">
+              <p className="font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Artista Sundemon</p>
+              <h3 className="mt-2 font-display text-xl text-earth-700">{name}</h3>
+            </div>
           </article>
         ))}
       </div>

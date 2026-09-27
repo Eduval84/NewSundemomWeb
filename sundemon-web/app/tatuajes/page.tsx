@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Gallery, Header, Process, Team } from "@/components/sections/landing-page";
+import { Footer, Gallery, Header, Process } from "@/components/sections/landing-page";
 
 export const metadata: Metadata = {
   title: "Tatuajes en Alcalá de Henares | Fine Line y Micro-Trazo",
@@ -25,7 +25,6 @@ export default function TattoosPage() {
         </section>
         <Gallery />
         <Process />
-        <Team />
       </main>
       <Footer />
     </>

@@ -309,12 +309,6 @@ export function Footer() {
           </address>
         </div>
       </div>
-      <div className="border-t border-white-warm/15">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 font-sans text-[10px] tracking-[0.08em] text-sand-300 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <span>© 2026 Sundemon Tattoo Studio · Alcalá de Henares</span>
-          <span>Instagram · WhatsApp · hola@sundemon.com</span>
-        </div>
-      </div>
     </footer>
   );
 }

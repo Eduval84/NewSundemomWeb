@@ -25,7 +25,7 @@ export default function ContactPage() {
             <p className="mt-6 max-w-xl font-sans text-base leading-7 text-ink-900/70 sm:text-lg">
               No necesitas tenerlo todo decidido. Comparte tu idea, una referencia o simplemente lo que quieres sentir, y encontraremos juntos el siguiente paso.
             </p>
-            <Link href="mailto:hola@sundemon.com" className="mt-8 inline-flex rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+            <Link href="mailto:hola@sundemon.com" className="mt-8 inline-flex rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-copper-500">
               Escribir a hola@sundemon.com ↗
             </Link>
           </div>

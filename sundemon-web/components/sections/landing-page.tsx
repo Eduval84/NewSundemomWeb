@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GalleryFilter } from "@/components/sections/gallery-filter";
 import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
+import { EmailAction, PhoneAction } from "@/components/ui/contact-actions";
 
 const essentialLinks = [
   {
@@ -24,8 +25,8 @@ const essentialLinks = [
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
     href: "/contacto",
-    image: "/images/Contacto.avif",
-    imageClass: "object-[center_80%]",
+    image: "/images/estudio.jpeg",
+    imageClass: "object-[center_65%]",
     label: "03 / Diálogo",
   },
 ];
@@ -61,7 +62,7 @@ function Mark() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-sand-300/50 bg-[#F7F4EE]/90 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-sand-300/60 bg-white-warm">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Sundemon Tattoo Studio, inicio">
           <Image
@@ -69,18 +70,23 @@ export function Header() {
             alt="Sundemon Tattoo Studio"
             width={156}
             height={58}
-            className="h-10 w-[136px] object-contain mix-blend-multiply sm:h-11 sm:w-[150px]"
+            className="h-8 w-[92px] object-contain mix-blend-multiply sm:h-11 sm:w-[150px]"
             priority
           />
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase md:flex">
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
-          <Link className="transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
+          <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
+          <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
+          <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
         </nav>
-        <Link href="/contacto" className="rounded-full bg-earth-700 px-4 py-3 font-sans text-xs font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
-          Cuéntanos tu idea
-        </Link>
+        <div className="hidden flex-col items-end gap-1 md:flex">
+          <PhoneAction />
+          <EmailAction />
+        </div>
+        <div className="flex flex-col items-end gap-1 md:hidden">
+          <PhoneAction />
+          <EmailAction />
+        </div>
       </div>
     </header>
   );
@@ -88,42 +94,38 @@ export function Header() {
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="border-b border-sand-300/50">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.82fr] lg:items-center lg:gap-20 lg:px-8 lg:py-20">
-        <div>
-          <div className="flex flex-wrap justify-between gap-3 font-sans text-[10px] font-semibold tracking-[0.12em] text-earth-500 uppercase">
-            <span><Mark /> Estudio de autor · Alcalá de Henares, Madrid</span>
-            <span className="text-right text-ink-900/60">Cita previa · Atención exclusiva</span>
+    <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
+      <Image
+        src="/images/Sundemom.avif"
+        alt="Interior del estudio Sundemon en Alcalá de Henares"
+        fill
+        priority
+        className="-z-20 object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-900/90 via-ink-900/65 to-ink-900/15" />
+      <div className="relative mx-auto flex min-h-[620px] max-w-6xl items-center px-4 py-16 sm:min-h-[700px] sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <div className="font-sans text-[10px] font-semibold tracking-[0.12em] text-sand-200 uppercase">
+            <span><Mark /> Alcalá de Henares</span>
           </div>
-          <div className="mt-16 max-w-xl lg:mt-24">
-            <p className="mb-5 font-sans text-xs tracking-[0.14em] text-copper-500 uppercase">Tattoo studio · desde 2018</p>
-            <h1 id="hero-title" className="font-display text-5xl leading-[1.05] text-earth-700 sm:text-7xl">
-              Tu historia.<br />
-              <em className="text-earth-500">En tu piel.</em>
+          <div className="mt-12 sm:mt-16">
+            <h1 id="hero-title" className="max-w-xl font-display text-5xl leading-[1.05] text-white-warm sm:text-7xl">
+              Estudio de tatuaje desde 2017
             </h1>
-            <p className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-ink-900/75 sm:text-lg">
-              Un espacio donde las ideas se convierten en tatuajes pensados para ti. Calma, arquitectura lúcida y precisión milimétrica muy cerca del centro histórico.
-            </p>
+            <h2 className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-sand-100 sm:text-lg">
+              Tu historia en tu piel. Un espacio donde las ideas se convierten en tatuajes pensados para ti.
+            </h2>
             <div className="mt-9 flex flex-wrap items-center gap-5">
-              <Link href="/contacto" className="rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+              <Link href="/contacto" className="rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-100">
                 Cuéntanos tu idea <span aria-hidden="true">↗</span>
               </Link>
-              <Link href="/tatuajes" className="font-sans text-sm font-semibold text-earth-700 underline decoration-sand-300 underline-offset-8 transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500">
+              <Link href="/tatuajes" className="font-sans text-sm font-semibold text-white-warm underline decoration-sand-300 underline-offset-8 transition-colors hover:text-sand-200 focus-visible:outline-2 focus-visible:outline-sand-100">
                 Ver trabajos
               </Link>
             </div>
           </div>
         </div>
-        <figure className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand-200 shadow-warm">
-            <Image src="/images/estudio.jpeg" alt="Estudio de tatuajes Sundemon en Calle Ferraz, Alcalá de Henares" fill priority loading="eager" className="object-cover" sizes="(max-width: 1024px) 100vw, 42vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent" />
-            <figcaption className="absolute inset-x-5 bottom-5 font-sans text-xs leading-5 text-white-warm">
-              <span className="block font-semibold tracking-[0.12em] text-sand-200 uppercase">El estudio</span>
-              Espacio de quietud y luz natural · Calle Ferraz 3
-            </figcaption>
-          </div>
-        </figure>
       </div>
     </section>
   );
@@ -149,7 +151,7 @@ export function EssentialNavigation() {
             <div className="p-5">
               <h3 className="font-display text-xl text-earth-700">{item.title}</h3>
               <p className="mt-2 font-sans text-sm leading-6 text-ink-900/65">{item.description}</p>
-              <span className="mt-5 block font-sans text-xs font-semibold text-earth-700">Descubrir <span aria-hidden="true">↗</span></span>
+              <span className="mt-5 block font-sans text-xs font-semibold text-forest-700">Descubrir <span aria-hidden="true">↗</span></span>
             </div>
           </Link>
         ))}
@@ -185,21 +187,11 @@ export function Process() {
 export function Philosophy() {
   return (
     <section id="estudio" aria-labelledby="philosophy-title" className="border-b border-sand-300/60">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div>
-          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Filosofía de autor</p>
-          <h2 id="philosophy-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Lejos de los clichés y el ruido.</h2>
-          <p className="mt-5 font-sans text-sm leading-7 text-ink-900/70">
-            Sundemon nace como un refugio de diseño contemporáneo donde cada proyecto se aborda con dedicación individual. Diseñamos a medida y entendemos el tatuaje como una pieza de arte permanente cuya historia comienza en la conversación.
-          </p>
-          <p className="mt-4 font-sans text-sm leading-7 text-ink-900/70">
-            Un espacio para mirar despacio, decidir con claridad y llevarte algo que tenga sentido mucho después de salir del estudio.
-          </p>
-          <span className="mt-7 inline-flex rounded-full border border-sand-300 bg-sand-100 px-3 py-2 font-sans text-[10px] font-semibold tracking-[0.08em] text-earth-700 uppercase">
-            <Mark /> Atención personalizada en la ciudad de Cervantes
-          </span>
+          <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Lejos de los clichés y el ruido.</h2>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {philosophyValues.map(([number, title, description]) => (
             <article key={number} className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-5">
               <div className="flex items-center justify-between">
@@ -266,50 +258,6 @@ export function Gallery() {
   );
 }
 
-export function Location() {
-  return (
-    <section aria-labelledby="location-title" className="border-y border-sand-300/60 bg-sand-200/50">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
-        <div>
-          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Dónde encontrarnos</p>
-          <h2 id="location-title" className="mt-3 font-display text-3xl text-earth-700">Un santuario creativo en la ciudad de Cervantes</h2>
-          <p className="mt-5 font-sans text-sm leading-7 text-ink-900/70">Un espacio tranquilo en el centro histórico de Alcalá de Henares, pensado para que el tiempo se detenga y la conversación encuentre su forma.</p>
-          <address className="mt-8 not-italic font-sans text-sm leading-7 text-earth-700">
-            <strong className="font-semibold">Calle de Ferraz 3</strong><br />
-            28807 · Alcalá de Henares, Madrid<br />
-            <span className="text-ink-900/60">L–V · 11:00–20:00 · Con cita previa</span>
-          </address>
-          <div className="mt-7 flex flex-wrap items-center gap-4">
-            <Link
-              href="/contacto"
-              className="rounded-full bg-earth-700 px-5 py-3 font-sans text-xs font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500"
-            >
-              Reservar una consulta
-            </Link>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Calle+de+Ferraz+3%2C+28807+Alcal%C3%A1+de+Henares%2C+Madrid"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-xs font-semibold text-earth-700 underline decoration-sand-300 underline-offset-4 transition-colors hover:text-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500"
-            >
-              Abrir indicaciones ↗
-            </a>
-          </div>
-        </div>
-        <div className="relative min-h-[280px] overflow-hidden rounded-xl border border-sand-300 bg-sand-100 shadow-warm">
-          <iframe
-            title="Mapa de ubicación de Sundemon Tattoo Studio en Calle de Ferraz 3, Alcalá de Henares"
-            src="https://www.google.com/maps?q=Calle+de+Ferraz+3%2C+28807+Alcal%C3%A1+de+Henares%2C+Madrid&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="absolute inset-0 h-full w-full border-0 grayscale-[0.2] contrast-[0.9] sepia-[0.12]"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function FAQ() {
   return (
     <section aria-labelledby="faq-title" className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
@@ -340,7 +288,11 @@ export function Footer() {
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Hablemos</p>
           <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">¿Tienes una idea en mente?</h2>
           <p className="mt-5 max-w-lg font-sans text-sm leading-7 text-sand-300">Cuéntanosla. Las mejores piezas suelen comenzar con una conversación sencilla.</p>
-          <Link href="mailto:hola@sundemon.com" className="mt-8 inline-block rounded-full bg-copper-500 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
+          <Link href="mailto:hola@sundemon.com" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
+          <address className="mt-8 not-italic font-sans text-sm leading-6 text-sand-300">
+            Calle de Ferraz 3<br />
+            28807 · Alcalá de Henares, Madrid
+          </address>
         </div>
         <div className="lg:pt-2">
           <p className="font-display text-xl tracking-[0.14em]">SUNDEMON</p>
@@ -387,12 +339,11 @@ export function LandingPage() {
         }}
       />
       <Header />
-      <main>
+      <main className="pt-[72px]">
         <Hero />
+        <Philosophy />
         <Testimonials />
         <EssentialNavigation />
-        <Philosophy />
-        <Location />
       </main>
       <Footer />
     </>

@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   description:
     "Sundemon Tattoo Studio: tatuajes de autor, fine line y micro-trazo en Calle Ferraz 3, Alcalá de Henares.",
+  icons: {
+    icon: "/images/logo.png",
+  },
   keywords: [
     "estudio de tatuajes en Alcalá de Henares",
     "tatuajes Alcalá de Henares",

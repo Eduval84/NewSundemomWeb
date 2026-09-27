@@ -67,7 +67,7 @@ export function ContactForm() {
           {state.message}
         </p>
       ) : null}
-      <button type="submit" disabled={isPending} className="w-full rounded-full bg-earth-700 px-6 py-3.5 font-sans text-sm font-semibold text-white-warm transition-colors hover:bg-earth-500 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-copper-500">
+      <button type="submit" disabled={isPending} className="w-full rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-copper-500">
         {isPending ? "Enviando consulta..." : "Enviar propuesta ↗"}
       </button>
     </form>

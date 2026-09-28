@@ -228,9 +228,8 @@ export function Team() {
       <div className="flex flex-wrap items-end justify-between gap-5">
         <div>
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El equipo Sundemon</p>
-          <h2 id="team-title" className="mt-3 font-display text-3xl text-earth-700">Personas detrás de cada pieza</h2>
+          <h2 id="team-title" className="mt-3 font-display text-3xl text-earth-700">Una red de artistas, una forma precisa y humana de trabajar.</h2>
         </div>
-        <p className="max-w-sm font-sans text-sm leading-6 text-ink-900/65">Una red de artistas y colaboradores que comparte una forma precisa y humana de trabajar.</p>
       </div>
       <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
         {artists.map(([name, image]) => (

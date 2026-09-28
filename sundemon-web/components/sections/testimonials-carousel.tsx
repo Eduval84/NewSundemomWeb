@@ -10,7 +10,7 @@ type Testimonial = {
   ownerReply?: string;
 };
 
-const testimonials: Testimonial[] = [
+const allTestimonials: Testimonial[] = [
   {
     author: "Jose Antonio Plaza Lobo",
     details: "Local Guide · 12 reseñas · 7 fotos",
@@ -252,9 +252,27 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+const selectedAuthors = new Set([
+  "Natalia Mellado, canto y voz energética",
+  "lidya movillo",
+  "Yolanda Gomez",
+  "Marcos Plaza",
+  "David G",
+  "Anemona Valentina Florea",
+  "Eduardo Valderrama Murillo",
+]);
+
+const testimonials = allTestimonials
+  .filter((testimonial) => selectedAuthors.has(testimonial.author))
+  .map((testimonial) => ({
+    ...testimonial,
+    author: testimonial.author === "lidya movillo" ? "Lidya Movillo" : testimonial.author,
+  }));
+
 export function TestimonialsCarousel() {
   const [visibleCount, setVisibleCount] = useState(1);
   const [startIndex, setStartIndex] = useState(0);
+  const [expandedReview, setExpandedReview] = useState<string | null>(null);
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -291,22 +309,43 @@ export function TestimonialsCarousel() {
         </div>
 
         <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
-          {visibleTestimonials.map((testimonial) => (
-            <article key={testimonial.author} className="flex min-h-64 flex-col justify-between rounded-lg bg-white-warm/80 p-6">
-              <div>
-                <p className="text-xs tracking-[0.3em] text-copper-500" aria-label="5 estrellas">★★★★★</p>
-                <blockquote className="mt-5 font-display text-base leading-7 text-earth-700">“{testimonial.quote}”</blockquote>
-              </div>
-              <footer className="mt-7 border-t border-sand-300/60 pt-4 font-sans text-[10px] text-ink-900/60">
-                <p className="font-semibold text-earth-700">{testimonial.author}</p>
-                {testimonial.details && <p className="mt-1">{testimonial.details} · {testimonial.date}</p>}
-                {!testimonial.details && <p className="mt-1">{testimonial.date}</p>}
-                {testimonial.ownerReply && (
-                  <p className="mt-4 border-l border-copper-500/60 pl-3 leading-5 text-ink-900/65">{testimonial.ownerReply}</p>
-                )}
-              </footer>
-            </article>
-          ))}
+          {visibleTestimonials.map((testimonial) => {
+            const isLong = testimonial.quote.length > 190;
+            const isExpanded = expandedReview === testimonial.author;
+
+            return (
+              <article key={testimonial.author} className="flex h-[292px] flex-col rounded-xl border border-black/15 bg-white p-5 shadow-none">
+                <header className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-earth-700 text-sm font-semibold text-white" aria-hidden="true">
+                      {testimonial.author.charAt(0).toUpperCase()}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="truncate font-sans text-sm font-semibold text-black">{testimonial.author}</p>
+                      <p className="mt-0.5 truncate font-sans text-xs text-black/55">{testimonial.date}</p>
+                    </div>
+                  </div>
+                  <span className="font-sans text-2xl font-bold leading-none text-[#4285f4]" aria-label="Reseña de Google">G</span>
+                </header>
+
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="font-sans text-lg leading-none tracking-tight text-[#fbbc04]" aria-label="5 estrellas">★★★★★</span>
+                  <span className="text-sm text-[#4285f4]" aria-label="Reseña verificada">✦</span>
+                </div>
+
+                <div className="mt-3 flex-1 overflow-hidden font-sans text-[15px] leading-[1.45] text-black">
+                  <blockquote className={isExpanded ? "" : "line-clamp-5"}>“{testimonial.quote}”</blockquote>
+                  {isLong && (
+                    <button type="button" onClick={() => setExpandedReview(isExpanded ? null : testimonial.author)} className="mt-2 font-sans text-sm text-black/55 underline underline-offset-2 hover:text-black focus-visible:outline-2 focus-visible:outline-[#4285f4]">
+                      {isExpanded ? "Mostrar menos" : "Leer más"}
+                    </button>
+                  )}
+                </div>
+
+                {testimonial.details && <p className="mt-3 truncate font-sans text-xs text-black/50">{testimonial.details}</p>}
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-8 flex items-center justify-between gap-4">

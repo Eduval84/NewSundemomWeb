@@ -47,14 +47,19 @@ export default function TattoosPage() {
         </section>
         <TattooStyles />
         <TattooProcess />
-        <section aria-labelledby="tattoos-cta-title" className="bg-ink-900 text-white-warm">
-          <div className="mx-auto max-w-5xl px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-32">
-            <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-300 uppercase">Antes de dar el paso</p>
-            <h2 id="tattoos-cta-title" className="mx-auto mt-5 max-w-3xl font-display text-4xl leading-tight sm:text-6xl">¿Qué quieres llevar contigo cuando este momento ya haya pasado?</h2>
-            <p className="mx-auto mt-6 max-w-xl font-sans text-base leading-7 text-sand-200">No tienes que llegar con todo decidido. Cuéntanos qué te mueve y encontraremos juntos la forma de hacerlo permanente.</p>
-            <Link href="/contacto" className="mt-9 inline-flex rounded-full bg-forest-700 px-7 py-4 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-100">
+        <section aria-labelledby="tattoos-cta-title" className="border-y border-sand-300/70 bg-sand-100">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8 lg:py-24">
+            <div>
+              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Antes de dar el paso</p>
+              <p className="mt-4 max-w-xs font-sans text-sm leading-6 text-ink-900/60">Una idea puede esperar. Una conversación es un buen lugar para empezar.</p>
+            </div>
+            <div>
+              <h2 id="tattoos-cta-title" className="max-w-3xl font-display text-4xl leading-tight text-earth-700 sm:text-5xl">¿Qué quieres llevar contigo cuando este momento ya haya pasado?</h2>
+              <p className="mt-6 max-w-xl font-sans text-base leading-7 text-ink-900/65">No tienes que llegar con todo decidido. Cuéntanos qué te mueve y encontraremos juntos la forma de hacerlo permanente.</p>
+              <Link href="/contacto" className="mt-8 inline-flex rounded-full bg-forest-700 px-7 py-4 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-earth-700">
               Reserva tu cita <span aria-hidden="true" className="ml-2">↗</span>
-            </Link>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

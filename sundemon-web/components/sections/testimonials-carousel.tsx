@@ -314,7 +314,7 @@ export function TestimonialsCarousel() {
             const isExpanded = expandedReview === testimonial.author;
 
             return (
-              <article key={testimonial.author} className="flex h-[292px] flex-col rounded-xl border border-black/15 bg-white p-5 shadow-none">
+              <article key={testimonial.author} className={`flex min-h-[292px] min-w-0 flex-col overflow-hidden rounded-xl border border-black/15 bg-white p-5 shadow-none ${isExpanded ? "h-auto" : "h-[292px]"}`}>
                 <header className="flex items-start justify-between gap-3">
                   <div className="flex min-w-0 items-center gap-3">
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-earth-700 text-sm font-semibold text-white" aria-hidden="true">
@@ -333,7 +333,7 @@ export function TestimonialsCarousel() {
                   <span className="text-sm text-[#4285f4]" aria-label="Reseña verificada">✦</span>
                 </div>
 
-                <div className="mt-3 flex-1 overflow-hidden font-sans text-[15px] leading-[1.45] text-black">
+                <div className={`mt-3 flex-1 font-sans text-[15px] leading-[1.45] text-black ${isExpanded ? "overflow-visible" : "overflow-hidden"}`}>
                   <blockquote className={isExpanded ? "" : "line-clamp-5"}>“{testimonial.quote}”</blockquote>
                   {isLong && (
                     <button type="button" onClick={() => setExpandedReview(isExpanded ? null : testimonial.author)} className="mt-2 font-sans text-sm text-black/55 underline underline-offset-2 hover:text-black focus-visible:outline-2 focus-visible:outline-[#4285f4]">

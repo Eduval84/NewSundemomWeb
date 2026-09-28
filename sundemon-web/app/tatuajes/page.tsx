@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Footer, Header, Process } from "@/components/sections/landing-page";
+import { Footer, Header } from "@/components/sections/landing-page";
+import { TattooProcess } from "@/components/sections/tattoo-process";
 import { TattooStyles } from "@/components/sections/tattoo-styles";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default function TattoosPage() {
           </div>
         </section>
         <TattooStyles />
-        <Process />
+        <TattooProcess />
         <section aria-labelledby="tattoos-cta-title" className="bg-ink-900 text-white-warm">
           <div className="mx-auto max-w-5xl px-4 py-24 text-center sm:px-6 lg:px-8 lg:py-32">
             <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-300 uppercase">Antes de dar el paso</p>

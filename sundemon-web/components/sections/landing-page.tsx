@@ -25,7 +25,7 @@ const essentialLinks = [
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
     href: "/contacto",
-    image: "/images/estudio.jpeg",
+    image: "/images/Edificio.jpg",
     imageClass: "object-[center_65%]",
     label: "03 / Diálogo",
   },
@@ -186,7 +186,6 @@ export function Process() {
             <li key={number} className="rounded-lg border border-sand-300/70 bg-sand-100/75 p-5">
               <div className="flex items-center justify-between border-b border-sand-300/60 pb-4">
                 <span className="font-display text-2xl text-copper-500">{number}</span>
-                <Mark />
               </div>
               <h3 className="mt-5 font-display text-lg text-earth-700">{title}</h3>
               <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{description}</p>
@@ -210,7 +209,6 @@ export function Philosophy() {
             <article key={number} className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-5">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xl text-copper-500">{number}</span>
-                <Mark />
               </div>
               <h3 className="mt-7 font-display text-xl text-earth-700">{title}</h3>
               <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{description}</p>

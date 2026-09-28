@@ -30,9 +30,8 @@ export default function ContactPage() {
             </Link>
           </div>
           <div className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-6 sm:p-8">
-            <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Ficha de propuesta</p>
             <h2 className="mt-3 font-display text-2xl text-earth-700">Qué puedes contarnos</h2>
-            <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">Rellena el formulario y cuéntanos lo que tienes en mente. Te responderemos en un plazo máximo de 72 horas.</p>
+            <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">Rellena el formulario y cuéntanos lo que tienes en mente. Te responderemos en un plazo máximo de 48 horas.</p>
             <div className="mt-7">
               <ContactForm />
             </div>

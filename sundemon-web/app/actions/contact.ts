@@ -88,7 +88,7 @@ export async function submitContact(
         <h1>Nueva consulta de reserva</h1>
         ${field("Nombre", name)}
         ${field("Email", email)}
-        ${field("Teléfono / WhatsApp", phone)}
+        ${field("Teléfono", phone)}
         ${field("Zona del cuerpo", bodyArea)}
         ${field("Estilo o referencias", style)}
         ${field("Disponibilidad", availability)}
@@ -107,7 +107,7 @@ export async function submitContact(
       html: `
         <h1>Gracias por escribirnos, ${escapeHtml(name)}</h1>
         <p>Hemos recibido tu consulta correctamente.</p>
-        <p>Nos pondremos en contacto contigo en un plazo máximo de 72 horas.</p>
+        <p>Nos pondremos en contacto contigo en un plazo máximo de 48 horas.</p>
         <p>Un saludo,<br />${escapeHtml(studioName)}</p>
       `,
     });
@@ -118,7 +118,7 @@ export async function submitContact(
 
     return {
       status: "success",
-      message: "Consulta enviada. Nos pondremos en contacto contigo en un plazo máximo de 72 horas.",
+      message: "Consulta enviada. Nos pondremos en contacto contigo en un plazo máximo de 48 horas.",
     };
   } catch (error) {
     console.error("Unable to submit contact form", error);

@@ -54,7 +54,7 @@ const artists = [
 ];
 
 const faqs = [
-  ["¿Cuánto tiempo tardáis en responder mi solicitud?", "Respondemos todas las consultas en un plazo máximo de 24 horas laborables. Revisamos cada propuesta con calma antes de contestarte."],
+  ["¿Cuánto tiempo tardáis en responder mi solicitud?", "Respondemos todas las consultas en un plazo máximo de 48 horas laborables. Revisamos cada propuesta con calma antes de contestarte."],
   ["¿Tengo que llevar algo preparado para la valoración?", "No es necesario. Una idea, una referencia o una conversación son suficientes para empezar a construir la propuesta."],
   ["¿Puedo acudir directamente al estudio?", "Trabajamos con cita previa para poder dedicarte el tiempo y la atención que merece cada proyecto."],
   ["¿Qué ocurre si no tengo una imagen exacta?", "Es precisamente ahí donde empieza nuestro trabajo: escuchamos lo que quieres transmitir y lo convertimos en una pieza propia."],

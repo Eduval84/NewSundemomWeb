@@ -25,7 +25,7 @@ export function ContactForm() {
           {state.fieldErrors?.email ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.email[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Teléfono / WhatsApp *
+          Teléfono *
           <input
             name="phone"
             type="tel"
@@ -45,8 +45,18 @@ export function ContactForm() {
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
-          Estilo o referencias
-          <input name="style" placeholder="Fine line, botánico..." className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
+          Estilo
+          <select name="style" defaultValue="" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm text-ink-900 outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30">
+            <option value="" disabled>Selecciona un estilo</option>
+            <option>Fine line</option>
+            <option>Microrealismo</option>
+            <option>Blackwork</option>
+            <option>Realismo</option>
+            <option>Conceptual</option>
+            <option>Puntillismo</option>
+            <option>Otro</option>
+            <option>Aún no lo tengo claro</option>
+          </select>
         </label>
         <label className="font-sans text-sm text-earth-700">
           Disponibilidad

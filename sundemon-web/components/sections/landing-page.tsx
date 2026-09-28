@@ -32,10 +32,10 @@ const essentialLinks = [
 ];
 
 const processSteps = [
-  ["01", "Reserva & Escucha", "Nos cuentas tu idea, referencias y el lugar de tu cuerpo que quieres habitar."],
-  ["02", "Consulta & Co-diseño", "Aterrizamos el concepto y construimos una propuesta pensada para ti."],
-  ["03", "La Sesión", "El día llega con calma, precisión y todo preparado para disfrutar del proceso."],
-  ["04", "Curación & Control", "Te acompañamos después para cuidar la pieza y verla evolucionar contigo."],
+  ["01", "Reserva & Escucha", "Nos cuentas tu idea, referencias y el lugar de tu cuerpo que quieres habitar.", "Primero entendemos la historia, el tamaño y el momento que quieres convertir en piel."],
+  ["02", "Consulta & Co-diseño", "Aterrizamos el concepto y construimos una propuesta pensada para ti.", "Probamos proporciones, composición y ritmo hasta que el diseño se siente verdaderamente tuyo."],
+  ["03", "La Sesión", "El día llega con calma, precisión y todo preparado para disfrutar del proceso.", "Preparamos el espacio, resolvemos las últimas dudas y trabajamos con atención en cada trazo."],
+  ["04", "Curación & Control", "Te acompañamos después para cuidar la pieza y verla evolucionar contigo.", "No termina al salir del estudio: te explicamos la cura y seguimos disponibles para tus preguntas."],
 ];
 
 const philosophyValues = [
@@ -176,22 +176,34 @@ export function EssentialNavigation() {
 
 export function Process() {
   return (
-    <section aria-labelledby="process-title" className="border-y border-sand-300/60 bg-sand-200/45">
+    <section id="proceso" aria-labelledby="process-title" className="border-y border-sand-300/60 bg-sand-200/45">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
-        <h2 id="process-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Un tatuaje empieza mucho antes de la aguja</h2>
-        <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">Claridad y calma desde el primer trazo. Entendemos el tatuaje como un proceso compartido.</p>
-        <ol className="mt-12 grid gap-4 lg:grid-cols-4">
-          {processSteps.map(([number, title, description]) => (
-            <li key={number} className="rounded-lg border border-sand-300/70 bg-sand-100/75 p-5">
-              <div className="flex items-center justify-between border-b border-sand-300/60 pb-4">
-                <span className="font-display text-2xl text-copper-500">{number}</span>
-              </div>
-              <h3 className="mt-5 font-display text-lg text-earth-700">{title}</h3>
-              <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{description}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="max-w-2xl">
+          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
+          <h2 id="process-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Una buena pieza se construye paso a paso</h2>
+          <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">Desde la primera conversación hasta la curación, cada parte importa. Queremos que sepas qué ocurre y por qué.</p>
+        </div>
+        <div className="mt-12 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand-200 lg:sticky lg:top-24">
+            <Image src="/images/Tatuajes.avif" alt="Detalle de un tatuaje realizado en Sundemon" fill className="object-cover object-[center_65%]" sizes="(max-width: 1024px) 100vw, 40vw" />
+            <div className="absolute inset-x-5 bottom-5 rounded-lg bg-ink-900/75 p-4 text-white-warm backdrop-blur-sm">
+              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-200 uppercase">Sundemon</p>
+              <p className="mt-2 font-display text-lg">Tiempo para hacerlo bien.</p>
+            </div>
+          </div>
+          <ol className="divide-y divide-sand-300/70">
+            {processSteps.map(([number, title, description, detail]) => (
+              <li key={number} className="grid gap-4 py-8 first:pt-0 sm:grid-cols-[72px_1fr]">
+                <span className="font-display text-3xl text-copper-500">{number}</span>
+                <div>
+                  <h3 className="font-display text-2xl text-earth-700">{title}</h3>
+                  <p className="mt-3 font-sans text-sm leading-6 text-ink-900/70">{description}</p>
+                  <p className="mt-4 border-l-2 border-forest-700 pl-4 font-sans text-xs leading-5 text-ink-900/55">{detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

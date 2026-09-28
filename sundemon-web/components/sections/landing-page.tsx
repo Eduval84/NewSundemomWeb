@@ -91,9 +91,28 @@ export function Header() {
           <PhoneAction />
           <EmailAction />
         </div>
-        <div className="flex flex-col items-end gap-1 md:hidden">
-          <PhoneAction />
-          <EmailAction />
+        <div className="flex items-center gap-3 md:hidden">
+          <div className="flex min-w-0 flex-col items-end gap-1">
+            <PhoneAction />
+            <EmailAction />
+          </div>
+          <details className="group relative">
+            <summary aria-label="Menú de navegación" className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-sand-300 text-ink-900 transition-colors hover:border-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500 [&::-webkit-details-marker]:hidden">
+              <span className="sr-only">Menú</span>
+              <span aria-hidden="true" className="flex w-4 flex-col gap-1">
+                <span className="h-px w-full bg-current transition-transform group-open:translate-y-1.5 group-open:rotate-45" />
+                <span className="h-px w-full bg-current transition-opacity group-open:opacity-0" />
+                <span className="h-px w-full bg-current transition-transform group-open:-translate-y-1.5 group-open:-rotate-45" />
+              </span>
+            </summary>
+            <div className="absolute right-0 top-[calc(100%+0.75rem)] z-10 w-[min(280px,calc(100vw-2rem))] border border-sand-300 bg-white-warm p-5 shadow-[0_12px_30px_rgba(45,38,31,0.12)]">
+              <nav aria-label="Navegación móvil" className="flex flex-col gap-4 font-sans text-sm font-semibold tracking-[0.08em] text-ink-900 uppercase">
+                <Link className="border-b border-sand-300/70 pb-3 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
+                <Link className="border-b border-sand-300/70 pb-3 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
+                <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
+              </nav>
+            </div>
+          </details>
         </div>
       </div>
     </header>

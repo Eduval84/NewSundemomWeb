@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 
 type Testimonial = {
   author: string;
@@ -273,6 +273,7 @@ export function TestimonialsCarousel() {
   const [visibleCount, setVisibleCount] = useState(1);
   const [startIndex, setStartIndex] = useState(0);
   const [expandedReview, setExpandedReview] = useState<string | null>(null);
+  const swipeOrigin = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -293,6 +294,25 @@ export function TestimonialsCarousel() {
 
   const goBack = () => setStartIndex((currentIndex) => Math.max(0, currentIndex - 1));
   const goForward = () => setStartIndex((currentIndex) => Math.min(maxStartIndex, currentIndex + 1));
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch" || !event.isPrimary) return;
+    if (event.target instanceof Element && event.target.closest("button, a")) return;
+
+    swipeOrigin.current = { x: event.clientX, y: event.clientY };
+  };
+  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    const origin = swipeOrigin.current;
+    swipeOrigin.current = null;
+
+    if (!origin) return;
+
+    const deltaX = event.clientX - origin.x;
+    const deltaY = event.clientY - origin.y;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    if (deltaX < 0) goForward();
+    else goBack();
+  };
 
   return (
     <section aria-labelledby="testimonials-title" className="bg-sand-200/60">
@@ -308,13 +328,22 @@ export function TestimonialsCarousel() {
           </div>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+        <div
+          data-testimonial-track
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={() => {
+            swipeOrigin.current = null;
+          }}
+          className="mt-9 grid touch-pan-y gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          aria-live="polite"
+        >
           {visibleTestimonials.map((testimonial) => {
             const isLong = testimonial.quote.length > 190;
             const isExpanded = expandedReview === testimonial.author;
 
             return (
-              <article key={testimonial.author} className={`flex min-h-[292px] min-w-0 flex-col overflow-hidden rounded-xl border border-black/15 bg-white p-5 shadow-none ${isExpanded ? "h-auto" : "h-[292px]"}`}>
+              <article key={testimonial.author} className={`animate-fade-in flex min-h-[292px] min-w-0 flex-col overflow-hidden rounded-xl border border-black/15 bg-white p-5 shadow-none ${isExpanded ? "h-auto" : "h-[292px]"}`}>
                 <header className="flex items-start justify-between gap-3">
                   <div className="flex min-w-0 items-center gap-3">
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-earth-700 text-sm font-semibold text-white" aria-hidden="true">
@@ -347,6 +376,9 @@ export function TestimonialsCarousel() {
             );
           })}
         </div>
+        <p className="mt-3 text-center font-sans text-xs text-ink-900/55 sm:hidden">
+          Desliza hacia los lados para cambiar de reseña
+        </p>
 
         <div className="mt-8 flex items-center justify-between gap-4">
           <button type="button" onClick={goBack} disabled={!canGoBack} aria-label="Ver reseñas anteriores" className="flex min-h-11 min-w-11 items-center justify-center rounded-full border border-earth-700/30 text-lg text-earth-700 transition-colors hover:bg-white-warm disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-copper-500">

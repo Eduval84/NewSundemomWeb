@@ -48,6 +48,7 @@ export function TattooProcess() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
   const [displayedImage, setDisplayedImage] = useState(baseImage);
   const [isFading, setIsFading] = useState(false);
+  const [isDesktopViewport, setIsDesktopViewport] = useState<boolean | null>(null);
   const transitionTimer = useRef<number | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -74,6 +75,7 @@ export function TattooProcess() {
 
     const observeDesktopSteps = () => {
       observer?.disconnect();
+      setIsDesktopViewport(desktopQuery.matches);
 
       if (!desktopQuery.matches || !sectionRef.current) return;
 
@@ -113,46 +115,48 @@ export function TattooProcess() {
   return (
     <section ref={sectionRef} id="proceso" aria-label="El proceso del tatuaje" className="border-y border-sand-300/60 bg-sand-200/45">
       <div className="relative hidden lg:block">
-        <div className="sticky top-0 h-screen overflow-hidden bg-ink-900">
-          <Image
-            src={displayedImage}
-            alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"}
-            fill
-            className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`}
-            sizes="100vw"
-            priority={activeStep === null}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/10 to-black/45" />
+        <div className="sticky top-0 h-screen">
+          <div className="relative h-full w-full overflow-hidden bg-ink-900">
+              <Image
+                src={displayedImage}
+                alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"}
+                fill
+                className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`}
+                sizes="(min-width: 1024px) calc(100vw - 1rem), 1px"
+                loading={isDesktopViewport === true ? "eager" : "lazy"}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/10 to-black/45" />
 
-          <div className="absolute inset-x-6 top-24 mx-auto flex max-w-7xl justify-end text-white sm:inset-x-10 lg:top-28 lg:px-8">
-            <div className="max-w-2xl text-right">
-              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white uppercase">El proceso</p>
-              <h2 id="process-title-desktop" className="mt-3 font-display text-4xl leading-tight text-white sm:text-5xl">
-                Una buena pieza se construye paso a paso
-              </h2>
-              <p className="mt-4 ml-auto max-w-xl font-sans text-sm leading-6 text-white/85">
-                Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje.
-              </p>
+              <div className="absolute inset-x-6 top-24 mx-auto flex max-w-7xl justify-end text-white sm:inset-x-10 lg:top-28 lg:px-8">
+                <div className="max-w-2xl text-right">
+                  <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white uppercase">El proceso</p>
+                  <h2 id="process-title-desktop" className="mt-3 font-display text-4xl leading-tight text-white sm:text-5xl">
+                    Una buena pieza se construye paso a paso
+                  </h2>
+                  <p className="mt-4 ml-auto max-w-xl font-sans text-sm leading-6 text-white/85">
+                    Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje.
+                  </p>
+                </div>
+              </div>
+
+              <div className="absolute inset-x-6 bottom-8 mx-auto max-w-7xl sm:inset-x-10 lg:bottom-12 lg:px-8">
+                <div className="max-w-xl border border-white/40 bg-black/70 p-6 text-white shadow-warm backdrop-blur-md sm:p-8">
+                  <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white/75 uppercase">
+                    Paso {activeStep === null ? 1 : activeStep + 1} de {processSteps.length}
+                  </p>
+                  <h3 className="mt-3 font-display text-3xl text-white sm:text-4xl">
+                    {activeProcess?.title ?? processSteps[0].title}
+                  </h3>
+                  <p className="mt-4 font-sans text-sm leading-6 text-white/90 sm:text-base">
+                    {activeProcess?.description ?? processSteps[0].description}
+                  </p>
+                  <p className="mt-4 border-l-2 border-white pl-4 font-sans text-sm leading-6 text-white/75">
+                    {activeProcess?.detail ?? processSteps[0].detail}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="absolute inset-x-6 bottom-8 mx-auto max-w-7xl sm:inset-x-10 lg:bottom-12 lg:px-8">
-            <div className="max-w-xl border border-white/40 bg-black/70 p-6 text-white shadow-warm backdrop-blur-md sm:p-8">
-              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white/75 uppercase">
-                Paso {activeStep === null ? 1 : activeStep + 1} de {processSteps.length}
-              </p>
-              <h3 className="mt-3 font-display text-3xl text-white sm:text-4xl">
-                {activeProcess?.title ?? processSteps[0].title}
-              </h3>
-              <p className="mt-4 font-sans text-sm leading-6 text-white/90 sm:text-base">
-                {activeProcess?.description ?? processSteps[0].description}
-              </p>
-              <p className="mt-4 border-l-2 border-white pl-4 font-sans text-sm leading-6 text-white/75">
-                {activeProcess?.detail ?? processSteps[0].detail}
-              </p>
-            </div>
-          </div>
-        </div>
 
         <div aria-hidden="true" className="relative z-10 -mt-[100vh]">
           {processSteps.map((step, index) => (
@@ -169,7 +173,7 @@ export function TattooProcess() {
         </div>
 
         <div className="relative mt-12 min-h-[560px] overflow-hidden rounded-xl bg-sand-200 shadow-warm sm:min-h-[620px]">
-          <Image src={displayedImage} alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="100vw" priority={activeStep === null} />
+          <Image src={displayedImage} alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="(min-width: 1152px) 1104px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" loading={isDesktopViewport === false ? "eager" : "lazy"} />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/55" />
           <div className="absolute inset-x-3 bottom-3 lg:hidden">
             {activeStep === null ? (

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { Footer, Header, Team } from "@/components/sections/landing-page";
 
-export const metadata: Metadata = {
-  title: "Sundemon Tattoo Studio | Espacio creativo en Alcalá de Henares",
+export const metadata: Metadata = createPageMetadata({
+  title: "El estudio en Alcalá de Henares",
   description:
-    "Conoce Sundemon Tattoo Studio, nuestra filosofía, equipo y espacio creativo en Calle Ferraz 3, Alcalá de Henares.",
-};
+    "Conoce el estudio de tatuajes Sundemon en Alcalá de Henares, su equipo y una forma de trabajar basada en la calma y la escucha.",
+  path: "/estudio",
+});
 
 export default function StudioPage() {
   return (

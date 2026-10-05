@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/sections/contact-form";
 import { FAQ, Footer, Header } from "@/components/sections/landing-page";
 
-export const metadata: Metadata = {
-  title: "Contacto y citas | Sundemon Tattoo Studio",
+export const metadata: Metadata = createPageMetadata({
+  title: "Contacto y citas",
   description:
-    "Contacta con Sundemon Tattoo Studio para hablar sobre tu próximo tatuaje en Alcalá de Henares. Estamos en Calle Ferraz 3.",
-};
+    "Pide cita con Sundemon Tattoo Studio en Alcalá de Henares. Cuéntanos tu idea de tatuaje o resuelve tus dudas sobre el proceso.",
+  path: "/contacto",
+});
 
 export default function ContactPage() {
   return (

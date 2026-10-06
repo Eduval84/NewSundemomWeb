@@ -1,6 +1,6 @@
 "use server";
 
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -72,18 +72,40 @@ export async function submitContact(
   }
 
   try {
-    const apiKey = requiredEnv("RESEND_API_KEY");
-    const recipient = requiredEnv("RESEND_CONTACT_EMAIL");
-    const sender = requiredEnv("RESEND_FROM_EMAIL");
-    const studioName = process.env.RESEND_FROM_NAME || "Sundemon Tattoo Studio";
-    const resend = new Resend(apiKey);
-    const { name, email, phone, bodyArea, style, availability, message } = parsed.data;
+    const host = requiredEnv("SMTP_HOST");
+    const port = Number(requiredEnv("SMTP_PORT"));
+    if (port !== 465 && port !== 587) {
+      throw new Error("SMTP_PORT must be 465 or 587.");
+    }
 
-    const internalEmail = await resend.emails.send({
-      from: `${studioName} <${sender}>`,
-      to: [recipient],
+    const smtpUser = requiredEnv("SMTP_USER");
+    const smtpPassword = requiredEnv("SMTP_PASS");
+    const sender = requiredEnv("SMTP_FROM_EMAIL");
+    const recipient = requiredEnv("CONTACT_EMAIL_TO");
+    const studioReplyTo = requiredEnv("CONTACT_EMAIL_REPLY_TO");
+    const studioName = process.env.SMTP_FROM_NAME || "Sundemon Tattoo Studio";
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure: port === 465,
+      requireTLS: port === 587,
+      auth: {
+        user: smtpUser,
+        pass: smtpPassword,
+      },
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
+    });
+    const { name, email, phone, bodyArea, style, availability, message } = parsed.data;
+    const safeName = name.replace(/[\r\n]+/g, " ");
+    const from = `${studioName} <${sender}>`;
+
+    await transporter.sendMail({
+      from,
+      to: recipient,
       replyTo: email,
-      subject: `[RESERVAS] Consulta para ${name}`,
+      subject: `Nueva reserva recibida desde la web - ${safeName}`,
       html: `
         <h1>Nueva consulta de reserva</h1>
         ${field("Nombre", name)}
@@ -96,14 +118,11 @@ export async function submitContact(
       `,
     });
 
-    if (internalEmail.error) {
-      throw new Error(`Internal email failed: ${internalEmail.error.message}`);
-    }
-
-    const confirmationEmail = await resend.emails.send({
-      from: `${studioName} <${sender}>`,
-      to: [email],
-      subject: "Hemos recibido tu consulta | Sundemon Tattoo Studio",
+    await transporter.sendMail({
+      from,
+      to: email,
+      replyTo: studioReplyTo,
+      subject: "Confirmación de tu reserva con Sundemon",
       html: `
         <h1>Gracias por escribirnos, ${escapeHtml(name)}</h1>
         <p>Hemos recibido tu consulta correctamente.</p>
@@ -111,10 +130,6 @@ export async function submitContact(
         <p>Un saludo,<br />${escapeHtml(studioName)}</p>
       `,
     });
-
-    if (confirmationEmail.error) {
-      throw new Error(`Confirmation email failed: ${confirmationEmail.error.message}`);
-    }
 
     return {
       status: "success",

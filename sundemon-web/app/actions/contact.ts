@@ -2,6 +2,7 @@
 
 import nodemailer from "nodemailer";
 import { z } from "zod";
+import { absoluteUrl } from "@/lib/seo";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre."),
@@ -82,7 +83,6 @@ export async function submitContact(
 
     const smtpUser = requiredEnv("SMTP_USER");
     const smtpPassword = requiredEnv("SMTP_PASS");
-    const studioName = "Sundemom Tattoo Studio";
     const transporter = nodemailer.createTransport({
       host,
       port,
@@ -121,11 +121,66 @@ export async function submitContact(
       to: email,
       replyTo: "reservas@sundemom.es",
       subject: "Confirmación de tu reserva con Sundemon",
+      text: `Hola, ${name}:
+
+Hemos recibido correctamente tu consulta para Sundemom Tattoo Studio.
+Nos pondremos en contacto contigo en un plazo máximo de 48 horas.
+
+Mientras tanto, puedes descubrir nuestros estilos en ${absoluteUrl("/tatuajes")}.
+
+Si necesitas añadir algo a tu consulta, responde a este correo.
+
+Un saludo,
+Sundemom Tattoo Studio
+reservas@sundemom.es`,
       html: `
-        <h1>Gracias por escribirnos, ${escapeHtml(name)}</h1>
-        <p>Hemos recibido tu consulta correctamente.</p>
-        <p>Nos pondremos en contacto contigo en un plazo máximo de 48 horas.</p>
-        <p>Un saludo,<br />${escapeHtml(studioName)}</p>
+        <div style="margin:0;background-color:#f2ede3;padding:32px 12px;font-family:Arial,Helvetica,sans-serif;color:#28271f;">
+          <span style="display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">Hemos recibido tu consulta. Nos pondremos en contacto contigo en un plazo máximo de 48 horas.</span>
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+            <tr>
+              <td align="center">
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;border:1px solid #e4d9c7;border-radius:12px;background-color:#fffdf9;border-collapse:separate;">
+                  <tr>
+                    <td align="center" style="padding:26px 24px 20px;border-bottom:1px solid #e9e0d2;background-color:#faf7f1;">
+                      <img src="${absoluteUrl("/images/logo.png")}" width="160" alt="Sundemom Tattoo Studio" style="display:block;width:160px;max-width:100%;height:auto;border:0;margin:0 auto;" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:32px 30px 12px;">
+                      <p style="margin:0 0 10px;font-size:11px;font-weight:bold;letter-spacing:2px;color:#a77b39;text-transform:uppercase;">Gracias por escribirnos</p>
+                      <h1 style="margin:0;font-size:26px;line-height:1.3;font-weight:normal;color:#30483b;">Hola, ${escapeHtml(name)}</h1>
+                      <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#4c4a42;">Hemos recibido correctamente tu consulta para <strong>Sundemom Tattoo Studio</strong>.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:16px 30px 8px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;background-color:#f6f2e9;border-left:4px solid #9dad63;">
+                        <tr>
+                          <td style="padding:16px 18px;">
+                            <p style="margin:0 0 6px;font-size:15px;font-weight:bold;color:#30483b;">¿Qué ocurre ahora?</p>
+                            <p style="margin:0;font-size:14px;line-height:1.7;color:#4c4a42;">Revisaremos tu idea y nos pondremos en contacto contigo en un plazo máximo de 48 horas.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="padding:24px 30px 30px;">
+                      <a href="${absoluteUrl("/tatuajes")}" style="display:inline-block;padding:13px 24px;border-radius:24px;background-color:#30483b;color:#ffffff;text-decoration:none;font-size:14px;font-weight:bold;">Descubre nuestros estilos</a>
+                      <p style="margin:22px 0 0;font-size:13px;line-height:1.7;color:#6a675e;">Si necesitas añadir algo a tu consulta, puedes responder directamente a este correo.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="padding:18px 24px;border-top:1px solid #e9e0d2;background-color:#faf7f1;">
+                      <p style="margin:0;font-size:12px;line-height:1.6;color:#777267;">Sundemom Tattoo Studio · Alcalá de Henares</p>
+                      <p style="margin:4px 0 0;font-size:12px;"><a href="${absoluteUrl("/")}" style="color:#536c4b;text-decoration:underline;">sundemom.es</a></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
       `,
     });
 

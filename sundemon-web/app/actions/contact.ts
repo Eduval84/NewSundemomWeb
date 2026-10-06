@@ -10,7 +10,7 @@ const contactSchema = z.object({
     .string()
     .trim()
     .regex(
-      /^(?:(?:\+34|0034)[ .-]?)?[6789]\d{2}[ .-]?\d{3}[ .-]?\d{3}$/,
+      /^(?:(?:\+34|0034)(?:[ .]|-)?)?[6789]\d{2}(?:[ .]|-)?\d{3}(?:[ .]|-)?\d{3}$/,
       "Introduce un teléfono español válido.",
     ),
   bodyArea: z.string().trim().max(120, "La zona del cuerpo es demasiado larga.").optional(),

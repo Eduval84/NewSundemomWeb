@@ -15,37 +15,37 @@ export function ContactForm() {
     <form action={formAction} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
-          Nombre completo *
+          <span className="block min-h-5 sm:min-h-10">Nombre completo *</span>
           <input name="name" required autoComplete="name" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
           {state.fieldErrors?.name ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.name[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Email *
+          <span className="block min-h-5 sm:min-h-10">Email *</span>
           <input name="email" type="email" required autoComplete="email" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
           {state.fieldErrors?.email ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.email[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Teléfono *
+          <span className="block min-h-5 sm:min-h-10">Teléfono *</span>
           <input
             name="phone"
             type="tel"
             required
             autoComplete="tel"
             inputMode="tel"
-            pattern="(?:(?:\+34|0034)[ .-]?)?[6789][0-9]{2}[ .-]?[0-9]{3}[ .-]?[0-9]{3}"
+            pattern="(?:(?:\+34|0034)(?:[ .]|-)?)?[6789][0-9]{2}(?:[ .]|-)?[0-9]{3}(?:[ .]|-)?[0-9]{3}"
             title="Introduce un teléfono español válido, por ejemplo 612 345 678."
             className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30"
           />
           {state.fieldErrors?.phone ? <span className="mt-1 block text-xs text-earth-500">{state.fieldErrors.phone[0]}</span> : null}
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Zona del cuerpo
+          <span className="block min-h-5 sm:min-h-10">Zona del cuerpo</span>
           <input name="bodyArea" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
         </label>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
-          Estilo
+          <span className="block min-h-5 sm:min-h-10">Estilo</span>
           <select name="style" defaultValue="" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm text-ink-900 outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30">
             <option value="" disabled>Selecciona un estilo</option>
             <option>Fine line</option>
@@ -58,7 +58,7 @@ export function ContactForm() {
           </select>
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Disponibilidad para contactar
+          <span className="block min-h-5 sm:min-h-10">Disponibilidad para contactar</span>
           <input name="availability" placeholder="Días y horarios en los que podemos contactarte" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
         </label>
       </div>

@@ -43,7 +43,7 @@ the Vercel project settings for the Production environment:
 ```text
 SMTP_HOST=smtp.dondominio.com
 SMTP_PORT=587
-SMTP_USER=contacto@sundemom.es
+SMTP_USER=reservas@sundemom.es
 SMTP_PASS=<the SMTP mailbox password>
 SMTP_FROM_EMAIL=reservas@sundemom.es
 SMTP_FROM_NAME=Sundemon Tattoo Studio

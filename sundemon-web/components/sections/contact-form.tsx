@@ -58,8 +58,8 @@ export function ContactForm() {
           </select>
         </label>
         <label className="font-sans text-sm text-earth-700">
-          Disponibilidad
-          <input name="availability" placeholder="Días y horarios preferidos" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
+          Disponibilidad para contactar
+          <input name="availability" placeholder="Días y horarios en los que podemos contactarte" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
         </label>
       </div>
       <label className="block font-sans text-sm text-earth-700">

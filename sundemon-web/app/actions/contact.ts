@@ -128,8 +128,6 @@ Nos pondremos en contacto contigo en un plazo máximo de 48 horas.
 
 Mientras tanto, puedes descubrir nuestros estilos en ${absoluteUrl("/tatuajes")}.
 
-Si necesitas añadir algo a tu consulta, responde a este correo.
-
 Un saludo,
 Sundemom Tattoo Studio
 reservas@sundemom.es`,
@@ -167,7 +165,6 @@ reservas@sundemom.es`,
                   <tr>
                     <td align="center" style="padding:24px 30px 30px;">
                       <a href="${absoluteUrl("/tatuajes")}" style="display:inline-block;padding:13px 24px;border-radius:24px;background-color:#30483b;color:#ffffff;text-decoration:none;font-size:14px;font-weight:bold;">Descubre nuestros estilos</a>
-                      <p style="margin:22px 0 0;font-size:13px;line-height:1.7;color:#6a675e;">Si necesitas añadir algo a tu consulta, puedes responder directamente a este correo.</p>
                     </td>
                   </tr>
                   <tr>

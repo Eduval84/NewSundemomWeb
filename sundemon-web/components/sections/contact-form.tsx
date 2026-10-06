@@ -50,10 +50,9 @@ export function ContactForm() {
             <option value="" disabled>Selecciona un estilo</option>
             <option>Fine line</option>
             <option>Microrealismo</option>
-            <option>Blackwork</option>
             <option>Realismo</option>
             <option>Conceptual</option>
-            <option>Puntillismo</option>
+            <option>Anime</option>
             <option>Otro</option>
             <option>Aún no lo tengo claro</option>
           </select>

@@ -45,11 +45,12 @@ SMTP_HOST=smtp.dondominio.com
 SMTP_PORT=587
 SMTP_USER=reservas@sundemom.es
 SMTP_PASS=<the SMTP mailbox password>
-SMTP_FROM_EMAIL=reservas@sundemom.es
-SMTP_FROM_NAME=Sundemon Tattoo Studio
-CONTACT_EMAIL_TO=sundemomspace@gmail.com
-CONTACT_EMAIL_REPLY_TO=sundemomspace@gmail.com
 ```
+
+The sender is fixed to `"Sundemom Tattoo Studio" <reservas@sundemom.es>`.
+Internal notifications go to `sundemomspace@gmail.com` with the validated
+customer address as `Reply-To`; customer confirmations go to the validated
+form address with `reservas@sundemom.es` as `Reply-To`.
 
 For local development, put the same variables in `.env.local` and restart the
 Next.js server. Never commit `.env.local` or expose `SMTP_PASS`; `.env.example`

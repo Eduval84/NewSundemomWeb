@@ -33,6 +33,8 @@ const initialState: ContactFormState = {
   message: "",
 };
 
+const sender = '"Sundemom Tattoo Studio" <reservas@sundemom.es>';
+
 function requiredEnv(name: string) {
   const value = process.env[name];
 
@@ -80,10 +82,7 @@ export async function submitContact(
 
     const smtpUser = requiredEnv("SMTP_USER");
     const smtpPassword = requiredEnv("SMTP_PASS");
-    const sender = requiredEnv("SMTP_FROM_EMAIL");
-    const recipient = requiredEnv("CONTACT_EMAIL_TO");
-    const studioReplyTo = requiredEnv("CONTACT_EMAIL_REPLY_TO");
-    const studioName = process.env.SMTP_FROM_NAME || "Sundemon Tattoo Studio";
+    const studioName = "Sundemom Tattoo Studio";
     const transporter = nodemailer.createTransport({
       host,
       port,
@@ -99,11 +98,10 @@ export async function submitContact(
     });
     const { name, email, phone, bodyArea, style, availability, message } = parsed.data;
     const safeName = name.replace(/[\r\n]+/g, " ");
-    const from = `${studioName} <${sender}>`;
 
     await transporter.sendMail({
-      from,
-      to: recipient,
+      from: sender,
+      to: "sundemomspace@gmail.com",
       replyTo: email,
       subject: `Nueva reserva recibida desde la web - ${safeName}`,
       html: `
@@ -119,9 +117,9 @@ export async function submitContact(
     });
 
     await transporter.sendMail({
-      from,
+      from: sender,
       to: email,
-      replyTo: studioReplyTo,
+      replyTo: "reservas@sundemom.es",
       subject: "Confirmación de tu reserva con Sundemon",
       html: `
         <h1>Gracias por escribirnos, ${escapeHtml(name)}</h1>

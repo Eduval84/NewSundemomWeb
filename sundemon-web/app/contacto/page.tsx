@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ContactForm } from "@/components/sections/contact-form";
 import { FAQ, Footer, Header } from "@/components/sections/landing-page";
 
@@ -25,9 +24,6 @@ export default function ContactPage() {
             <p className="mt-6 max-w-xl font-sans text-base leading-7 text-ink-900/70 sm:text-lg">
               No necesitas tenerlo todo decidido. Comparte tu idea, una referencia o simplemente lo que quieres sentir, y encontraremos juntos el siguiente paso.
             </p>
-            <Link href="mailto:hola@sundemon.com" className="mt-8 inline-flex rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-copper-500">
-              Escribir a hola@sundemon.com ↗
-            </Link>
           </div>
           <div className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-6 sm:p-8">
             <h2 className="mt-3 font-display text-2xl text-earth-700">Qué puedes contarnos</h2>

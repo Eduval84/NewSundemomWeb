@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LocalBusinessJsonLd } from "@/components/seo/local-business-json-ld";
 import { GalleryFilter } from "@/components/sections/gallery-filter";
 import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
 import { EmailAction, PhoneAction } from "@/components/ui/contact-actions";
@@ -345,28 +346,7 @@ export function Footer() {
 export function LandingPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "TattooParlor",
-            name: "Sundemon Tattoo Studio",
-            description:
-              "Estudio de tatuajes de autor, fine line y micro-trazo en Alcalá de Henares.",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Calle Ferraz 3",
-              postalCode: "28807",
-              addressLocality: "Alcalá de Henares",
-              addressRegion: "Madrid",
-              addressCountry: "ES",
-            },
-            openingHours: "Mo-Fr 11:00-20:00",
-            priceRange: "$$",
-          }),
-        }}
-      />
+      <LocalBusinessJsonLd />
       <Header />
       <main className="pt-[72px]">
         <Hero />

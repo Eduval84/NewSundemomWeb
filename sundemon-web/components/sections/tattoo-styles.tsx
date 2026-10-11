@@ -19,13 +19,6 @@ const styles = [
     position: "object-[58%_55%]",
   },
   {
-    name: "Blackwork",
-    eyebrow: "Tinta y contraste",
-    description: "Composiciones gráficas de negro sólido, contraste y una presencia que no necesita explicar nada.",
-    image: "/images/Contacto.avif",
-    position: "object-[center_55%]",
-  },
-  {
     name: "Realismo",
     eyebrow: "Volumen y textura",
     description: "Sombras, profundidad y proporción para convertir una imagen importante en una pieza viva.",
@@ -40,9 +33,9 @@ const styles = [
     position: "object-[center_35%]",
   },
   {
-    name: "Puntillismo",
-    eyebrow: "Textura construida",
-    description: "Miles de puntos que crean volumen, ritmo y una textura serena sobre la piel.",
+    name: "Anime",
+    eyebrow: "Personajes y emoción",
+    description: "Diseños inspirados en el anime, con personajes, expresividad y detalles que cobran vida sobre la piel.",
     image: "/images/Artistas/Jhoan.avif",
     position: "object-[center_30%]",
   },

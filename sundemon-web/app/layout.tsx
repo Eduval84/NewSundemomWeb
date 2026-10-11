@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Prata } from "next/font/google";
+import { absoluteUrl, isIndexable, siteDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
 import "./globals.css";
+
+const defaultTitle = "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -14,28 +17,49 @@ const prata = Prata({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: {
-    default: "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares",
+    default: defaultTitle,
     template: "%s | Sundemon Tattoo Studio",
   },
-  description:
-    "Sundemon Tattoo Studio: tatuajes de autor, fine line y micro-trazo en Calle Ferraz 3, Alcalá de Henares.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: isIndexable,
+    follow: isIndexable,
+    googleBot: {
+      index: isIndexable,
+      follow: isIndexable,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
   },
-  keywords: [
-    "estudio de tatuajes en Alcalá de Henares",
-    "tatuajes Alcalá de Henares",
-    "Sundemon Tattoo Studio",
-    "fine line Madrid",
-  ],
   openGraph: {
-    title: "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares",
-    description:
-      "Tatuajes pensados para ti, en un espacio de calma y precisión en el centro histórico de Alcalá de Henares.",
+    title: defaultTitle,
+    description: siteDescription,
+    url: absoluteUrl("/"),
+    siteName,
     locale: "es_ES",
     type: "website",
+    images: [
+      {
+        url: socialImage,
+        alt: "Interior de Sundemon Tattoo Studio en Alcalá de Henares",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: siteDescription,
+    images: [socialImage],
   },
 };
 

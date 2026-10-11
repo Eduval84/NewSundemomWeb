@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 import { Footer, Header } from "@/components/sections/landing-page";
 import { TattooProcess } from "@/components/sections/tattoo-process";
 import { TattooStyles } from "@/components/sections/tattoo-styles";
 
-export const metadata: Metadata = {
-  title: "Tatuajes en Alcalá de Henares | Fine Line y Micro-Trazo",
+export const metadata: Metadata = createPageMetadata({
+  title: "Tatuajes en Alcalá de Henares",
   description:
-    "Descubre los tatuajes de autor de Sundemon en Alcalá de Henares: fine line, micro-trazo y diseños pensados para ti.",
-};
+    "Tatuajes de autor en Alcalá de Henares: fine line, micro-trazo y diseños personalizados en Sundemon Tattoo Studio.",
+  path: "/tatuajes",
+});
 
 export default function TattoosPage() {
   return (

@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Contact form email configuration
+
+The contact form sends email through DonDominio SMTP. Add these variables to
+the Vercel project settings for the Production environment:
+
+```text
+SMTP_HOST=smtp.dondominio.com
+SMTP_PORT=587
+SMTP_USER=reservas@sundemom.es
+SMTP_PASS=<the SMTP mailbox password>
+```
+
+The sender is fixed to `"Sundemom Tattoo Studio" <reservas@sundemom.es>`.
+Internal notifications go to `sundemomspace@gmail.com` with the validated
+customer address as `Reply-To`; customer confirmations go to the validated
+form address with `reservas@sundemom.es` as `Reply-To`.
+
+For local development, put the same variables in `.env.local` and restart the
+Next.js server. Never commit `.env.local` or expose `SMTP_PASS`; `.env.example`
+contains only a placeholder. After adding the variables in Vercel, redeploy
+Production. Port 587 uses STARTTLS; port 465 can be used with `SMTP_PORT=465`.

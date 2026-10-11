@@ -56,6 +56,8 @@ export function EmailAction() {
   return (
     <a
       href="mailto:contacto@sundemom.es"
+      target="_blank"
+      rel="noreferrer"
       className="flex items-center gap-2 whitespace-nowrap font-sans text-[10px] font-semibold text-ink-900 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500 sm:text-xs"
     >
       <EmailIcon />

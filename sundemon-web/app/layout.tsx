@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Prata } from "next/font/google";
 import { absoluteUrl, isIndexable, siteDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import "./globals.css";
 
 const defaultTitle = "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares";
@@ -74,7 +75,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${manrope.variable} ${prata.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

@@ -14,7 +14,7 @@ export function GET() {
 ## Información del estudio
 - Dirección: Calle de Ferraz 3, 28807, Alcalá de Henares, Madrid, España
 - Teléfono: +34 656 925 570
-- Email: hola@sundemon.com
+- Email: contacto@sundemom.es
 - Idioma principal: español
 
 ## Sitemap

@@ -13,12 +13,12 @@ export function LocalBusinessJsonLd() {
         url: homeUrl,
         description: siteDescription,
         image: [
-          absoluteUrl("/images/estudio.jpeg"),
+          absoluteUrl("/images/EstudioTatuajesAlcalaDeHenares.avif"),
           absoluteUrl("/images/H1Tatuajes.avif"),
         ],
         logo: absoluteUrl("/images/logo.png"),
         telephone: "+34656925570",
-        email: "hola@sundemon.com",
+        email: "contacto@sundemom.es",
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",

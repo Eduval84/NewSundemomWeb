@@ -18,7 +18,7 @@ const essentialLinks = [
     title: "Sundemon",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
     href: "/estudio",
-    image: "/images/Sundemom.avif",
+    image: "/images/EstudioTatuajesAlcalaDeHenares.avif",
     imageClass: "object-[center_35%]",
     label: "02 / Espacio",
   },
@@ -124,8 +124,8 @@ function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
       <Image
-        src="/images/Sundemom.avif"
-        alt="Interior del estudio Sundemon en Alcalá de Henares"
+        src="/images/EstudioTatuajesAlcalaDeHenares.avif"
+        alt="Estudio de tatuajes en Alcalá de Henares"
         fill
         priority
         className="-z-20 object-cover object-center"
@@ -324,7 +324,7 @@ export function Footer() {
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Hablemos</p>
           <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">¿Tienes una idea en mente?</h2>
           <p className="mt-5 max-w-lg font-sans text-sm leading-7 text-sand-300">Cuéntanosla. Las mejores piezas suelen comenzar con una conversación sencilla.</p>
-          <Link href="mailto:contacto@sundemom.es" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
+          <Link href="mailto:contacto@sundemom.es" target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
         </div>
         <div className="lg:pt-2">
           <p className="font-display text-xl tracking-[0.14em]">SUNDEMON</p>

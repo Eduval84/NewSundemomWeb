@@ -101,7 +101,7 @@ export async function submitContact(
 
     await transporter.sendMail({
       from: sender,
-      to: "sundemomspace@gmail.com",
+      to: "contacto@sundemom.es",
       replyTo: email,
       subject: `Nueva reserva recibida desde la web - ${safeName}`,
       html: `

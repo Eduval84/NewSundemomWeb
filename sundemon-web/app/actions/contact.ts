@@ -119,7 +119,7 @@ export async function submitContact(
     await transporter.sendMail({
       from: sender,
       to: email,
-      replyTo: "reservas@sundemom.es",
+      replyTo: "contacto@sundemom.es",
       subject: "Confirmación de tu reserva con Sundemon",
       text: `Hola, ${name}:
 

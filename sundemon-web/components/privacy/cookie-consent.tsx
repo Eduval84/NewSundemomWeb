@@ -44,7 +44,6 @@ export function CookieConsent() {
 
   return (
     <aside
-      role="dialog"
       aria-label="Preferencias de privacidad"
       className="fixed inset-x-4 bottom-4 z-[60] border border-sand-300 bg-white-warm p-5 shadow-[0_12px_30px_rgba(45,38,31,0.16)] sm:inset-x-auto sm:right-6 sm:max-w-md"
     >
@@ -56,14 +55,14 @@ export function CookieConsent() {
         <button
           type="button"
           onClick={() => chooseConsent("accepted")}
-          className="rounded-full bg-forest-700 px-5 py-2.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-copper-500"
+          className="min-h-11 rounded-full bg-forest-700 px-5 py-2.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-copper-500"
         >
           Aceptar
         </button>
         <button
           type="button"
           onClick={() => chooseConsent("rejected")}
-          className="rounded-full border border-earth-700/30 px-5 py-2.5 font-sans text-sm font-semibold text-earth-700 transition-colors hover:border-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500"
+          className="min-h-11 rounded-full border border-earth-700/30 px-5 py-2.5 font-sans text-sm font-semibold text-earth-700 transition-colors hover:border-copper-500 focus-visible:outline-2 focus-visible:outline-copper-500"
         >
           Rechazar
         </button>

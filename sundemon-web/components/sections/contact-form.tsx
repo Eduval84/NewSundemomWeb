@@ -1,7 +1,13 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { submitContact, type ContactFormState } from "@/app/actions/contact";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 const initialState: ContactFormState = {
   status: "idle",
@@ -10,6 +16,14 @@ const initialState: ContactFormState = {
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContact, initialState);
+
+  useEffect(() => {
+    if (state.status === "success") {
+      window.gtag?.("event", "generate_lead", {
+        form_name: "contact",
+      });
+    }
+  }, [state.status]);
 
   return (
     <form action={formAction} className="space-y-5">

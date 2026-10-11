@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope, Prata } from "next/font/google";
 import { absoluteUrl, isIndexable, siteDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { CookieConsent } from "@/components/privacy/cookie-consent";
 import "./globals.css";
 
 const defaultTitle = "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares";
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         <GoogleAnalytics />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ export function LocalBusinessJsonLd() {
         description: siteDescription,
         image: [
           absoluteUrl("/images/seo/social-share.avif"),
-          absoluteUrl("/images/tatuajes/estilos/microrealismo.avif"),
+          absoluteUrl("/images/tatuajes/hero-escucha.avif"),
         ],
         logo: absoluteUrl("/images/brand/logo.png"),
         telephone: "+34656925570",

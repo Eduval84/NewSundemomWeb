@@ -16,7 +16,7 @@ export default function StudioPage() {
       <Header />
       <main>
         <section aria-labelledby="studio-hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
-          <Image src="/images/estudio/hero-cuenco-tibetano.jpg" alt="Cuenco tibetano iluminado sostenido en la mano en el estudio Sundemom" fill priority className="-z-20 object-cover object-[65%_center]" sizes="100vw" />
+          <Image src="/images/estudio/hero-cuenco-tibetano.avif" alt="Cuenco tibetano iluminado sostenido en la mano en el estudio Sundemom" fill priority className="-z-20 object-cover object-[65%_center]" sizes="100vw" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-900/90 via-ink-900/60 to-ink-900/15" />
           <div className="relative mx-auto flex min-h-[620px] max-w-6xl items-center px-4 py-16 sm:min-h-[700px] sm:px-6 lg:px-8">
             <div className="max-w-2xl">

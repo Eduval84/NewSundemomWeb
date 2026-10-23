@@ -24,7 +24,7 @@ const processSteps: ProcessStep[] = [
     description: "Toda gran idea merece ser escuchada.",
     detail: "Cuéntanos qué tienes en mente. Te ayudaremos a dar forma a tu idea, explorando juntos las posibilidades de diseño y la zona de tu cuerpo que mejor se adapte a tu tatuaje.",
     alt: "Consulta tu tatuaje sin compromiso: en SUNDEMOM, antes de diseñar, escuchamos",
-    image: "/images/tatuajes/proceso/1-reserva-consulta.jpg",
+    image: "/images/tatuajes/proceso/1-reserva-consulta.avif",
     position: "object-[center_50%]",
   },
   {
@@ -33,7 +33,7 @@ const processSteps: ProcessStep[] = [
     title: "Preparamos tu diseño",
     description: "En esta etapa, te invitamos a sentarte junto a uno de nuestros artistas para diseñar tu tatuaje en directo, participando en cada decisión hasta encontrar una composición que refleje lo que realmente deseas llevar en tu piel.",
     alt: "Diseñamos contigo el tatuaje en una tableta",
-    image: "/images/tatuajes/proceso/2-diseno-contigo.jpg",
+    image: "/images/tatuajes/proceso/2-diseno-contigo.avif",
     position: "object-[center_50%]",
   },
   {
@@ -42,7 +42,7 @@ const processSteps: ProcessStep[] = [
     title: "La sesión",
     description: "Sabemos que cada tatuaje dejará una marca permanente en tu piel. Por eso, cuidamos cada paso del proceso para que llegues a este día con seguridad, confianza y tranquilidad.",
     alt: "Tatuadora trabajando con calma durante una sesión",
-    image: "/images/tatuajes/proceso/3-sesion.jpg",
+    image: "/images/tatuajes/proceso/3-sesion.avif",
     position: "object-[center_50%]",
   },
   {
@@ -52,7 +52,7 @@ const processSteps: ProcessStep[] = [
     description: "Nuestro compromiso va más allá del tatuaje.",
     detail: "Una obra no está terminada hasta que tu piel ha cicatrizado correctamente. Por eso, en SUNDEMOM seguimos a tu lado después de cada sesión, acompañándote durante el proceso de cicatrización y asesorándote sobre los cuidados necesarios.",
     alt: "Tatuaje recién hecho protegido durante la cicatrización",
-    image: "/images/tatuajes/proceso/4-cicatrizacion.jpg",
+    image: "/images/tatuajes/proceso/4-cicatrizacion.avif",
     position: "object-[center_50%]",
   },
 ];

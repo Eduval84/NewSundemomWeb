@@ -10,24 +10,24 @@ const essentialLinks = [
     title: "Tatuajes",
     description: "Descubre nuestro proceso, estilos y piezas que cuentan historias.",
     href: "/tatuajes",
-    image: "/images/Tatuajes.avif",
-    imageClass: "object-[center_65%]",
+    image: "/images/DSC_0002-2.jpg",
+    imageClass: "object-[40%_center]",
     label: "01 / Archivo",
   },
   {
     title: "Sundemon",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
     href: "/estudio",
-    image: "/images/EstudioTatuajesAlcalaDeHenares.avif",
-    imageClass: "object-[center_35%]",
+    image: "/images/DSC_0115-2.jpg",
+    imageClass: "object-[60%_center]",
     label: "02 / Espacio",
   },
   {
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
     href: "/contacto",
-    image: "/images/Edificio.jpg",
-    imageClass: "object-[center_65%]",
+    image: "/images/DSC_0258-2.jpg",
+    imageClass: "object-[center_60%]",
     label: "03 / Diálogo",
   },
 ];
@@ -40,10 +40,30 @@ const processSteps = [
 ];
 
 const philosophyValues = [
-  ["01", "Idea", "Cada tatuaje comienza con una historia y una conversación en la que puedas sentirte escuchado."],
-  ["02", "Diseño", "Damos forma al concepto con intención, proporción y respeto por tu anatomía."],
-  ["03", "Experiencia", "El proceso se construye con calma, desde la primera consulta hasta la última cura."],
-  ["04", "Confianza", "Acompañamiento honesto para que tu pieza se sienta tan tuya como el recuerdo que la inspira."],
+  {
+    number: "01",
+    title: "Idea",
+    heading: "Todo gran tatuaje comienza con una conversación.",
+    paragraphs: ["Detrás de cada idea hay una historia que merece ser escuchada. Por eso, dedicamos tiempo a conocerte, entender lo que buscas y acompañarte desde el primer momento."],
+  },
+  {
+    number: "02",
+    title: "Diseño",
+    heading: "Tu idea merece un diseño único.",
+    paragraphs: ["Escuchamos tu historia y damos forma a tus ideas, creando contigo un diseño personalizado que combina creatividad, técnica y armonía con tu cuerpo."],
+  },
+  {
+    number: "03",
+    title: "Experiencia",
+    heading: "Mucho más que una sesión de tatuaje.",
+    paragraphs: ["Cuidamos cada detalle para que disfrutes del proceso con calma, confianza y atención personalizada. Un momento creado para ti, donde el arte y la experiencia se encuentran."],
+  },
+  {
+    number: "04",
+    title: "Confianza",
+    heading: "Nuestro compromiso va más allá del tatuaje.",
+    paragraphs: ["Te acompañamos antes, durante y después de tu sesión. Porque nuestro trabajo no termina cuando dejamos la máquina, sino cuando tu tatuaje ha cicatrizado correctamente."],
+  },
 ];
 
 const artists = [
@@ -124,11 +144,11 @@ function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
       <Image
-        src="/images/EstudioTatuajesAlcalaDeHenares.avif"
-        alt="Estudio de tatuajes en Alcalá de Henares"
+        src="/images/DSC_0207-2.jpg"
+        alt="Espalda iluminada con sombras de hojas en el estudio de tatuajes de Alcalá de Henares"
         fill
         priority
-        className="-z-20 object-cover object-center"
+        className="-z-20 object-cover object-[70%_40%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-900/90 via-ink-900/65 to-ink-900/15" />
@@ -182,7 +202,7 @@ function EssentialCard({ item, horizontal = false }: { item: (typeof essentialLi
 export function EssentialNavigation() {
   return (
     <section aria-labelledby="essential-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <h2 id="essential-title" className="font-display text-3xl text-earth-700">Navegación esencial</h2>
+      <h2 id="essential-title" className="font-display text-3xl text-earth-700">Descubre Sundemom</h2>
       <p className="mt-3 max-w-xl font-sans text-sm leading-6 text-ink-900/65">Tres puertas de entrada para comprender nuestra forma de entender el arte corporal contemporáneo.</p>
       <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_2fr] lg:items-stretch">
         <EssentialCard item={essentialLinks[0]} />
@@ -237,13 +257,16 @@ export function Philosophy() {
           <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Cómo creamos tu tatuaje: escucha, precisión y acompañamiento</h2>
         </div>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {philosophyValues.map(([number, title, description]) => (
+          {philosophyValues.map(({ number, title, heading, paragraphs }) => (
             <article key={number} className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-5">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xl text-copper-500">{number}</span>
+                <span className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">{title}</span>
               </div>
-              <h3 className="mt-7 font-display text-xl text-earth-700">{title}</h3>
-              <p className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{description}</p>
+              <h3 className="mt-6 font-display text-xl leading-snug text-earth-700">{heading}</h3>
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph} className="mt-3 font-sans text-sm leading-6 text-ink-900/65">{paragraph}</p>
+              ))}
             </article>
           ))}
         </div>

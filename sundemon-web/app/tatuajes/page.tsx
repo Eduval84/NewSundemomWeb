@@ -20,7 +20,7 @@ export default function TattoosPage() {
       <main>
         <section aria-labelledby="tattoos-hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
           <Image
-            src="/images/DSC_0192-2.jpg"
+            src="/images/tatuajes/hero-escucha.jpg"
             alt="Tatuador de Sundemon escuchando a un cliente durante la consulta"
             fill
             priority

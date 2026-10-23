@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
+    icon: "/images/brand/logo.png",
+    shortcut: "/images/brand/logo.png",
   },
   openGraph: {
     title: defaultTitle,

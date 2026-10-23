@@ -13,10 +13,10 @@ export function LocalBusinessJsonLd() {
         url: homeUrl,
         description: siteDescription,
         image: [
-          absoluteUrl("/images/EstudioTatuajesAlcalaDeHenares.avif"),
-          absoluteUrl("/images/H1Tatuajes.avif"),
+          absoluteUrl("/images/seo/social-share.avif"),
+          absoluteUrl("/images/tatuajes/estilos/microrealismo.avif"),
         ],
-        logo: absoluteUrl("/images/logo.png"),
+        logo: absoluteUrl("/images/brand/logo.png"),
         telephone: "+34656925570",
         email: "contacto@sundemom.es",
         priceRange: "$$",

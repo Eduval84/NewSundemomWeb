@@ -140,7 +140,7 @@ reservas@sundemom.es`,
                 <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;border:1px solid #e4d9c7;border-radius:12px;background-color:#fffdf9;border-collapse:separate;">
                   <tr>
                     <td align="center" style="padding:26px 24px 20px;border-bottom:1px solid #e9e0d2;background-color:#faf7f1;">
-                      <img src="${absoluteUrl("/images/logo-email.png")}" width="160" alt="Sundemom Tattoo Studio" style="display:block;width:160px;max-width:100%;height:auto;border:0;margin:0 auto;" />
+                      <img src="${absoluteUrl("/images/brand/logo-email.png")}" width="160" alt="Sundemom Tattoo Studio" style="display:block;width:160px;max-width:100%;height:auto;border:0;margin:0 auto;" />
                     </td>
                   </tr>
                   <tr>

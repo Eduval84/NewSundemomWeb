@@ -10,7 +10,7 @@ const essentialLinks = [
     title: "Tatuajes",
     description: "Descubre nuestro proceso, estilos y piezas que cuentan historias.",
     href: "/tatuajes",
-    image: "/images/DSC_0002-2.jpg",
+    image: "/images/tatuajes/proceso/3-sesion.jpg",
     imageClass: "object-[40%_center]",
     label: "01 / Archivo",
   },
@@ -18,7 +18,7 @@ const essentialLinks = [
     title: "Sundemon",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
     href: "/estudio",
-    image: "/images/DSC_0115-2.jpg",
+    image: "/images/estudio/hero-cuenco-tibetano.jpg",
     imageClass: "object-[60%_center]",
     label: "02 / Espacio",
   },
@@ -26,7 +26,7 @@ const essentialLinks = [
     title: "Contacto",
     description: "Cuéntanos qué tienes en mente. Empecemos con una conversación.",
     href: "/contacto",
-    image: "/images/DSC_0258-2.jpg",
+    image: "/images/home/tarjeta-contacto.jpg",
     imageClass: "object-[center_60%]",
     label: "03 / Diálogo",
   },
@@ -67,11 +67,11 @@ const philosophyValues = [
 ];
 
 const artists = [
-  ["David", "/images/Artistas/David.avif"],
-  ["Enrique", "/images/Artistas/Enrique.avif"],
-  ["Jhoan", "/images/Artistas/Jhoan.avif"],
-  ["Paula", "/images/Artistas/Paula.avif"],
-  ["Yaiza", "/images/Artistas/Yaiza.avif"],
+  ["David", "/images/equipo/david.avif"],
+  ["Enrique", "/images/equipo/enrique.avif"],
+  ["Jhoan", "/images/equipo/jhoan.avif"],
+  ["Paula", "/images/equipo/paula.avif"],
+  ["Yaiza", "/images/equipo/yaiza.avif"],
 ];
 
 const faqs = [
@@ -95,7 +95,7 @@ export function Header() {
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Sundemon Tattoo Studio, inicio">
           <Image
-            src="/images/logo.png"
+            src="/images/brand/logo.png"
             alt="Sundemon Tattoo Studio"
             width={156}
             height={58}
@@ -144,7 +144,7 @@ function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
       <Image
-        src="/images/DSC_0207-2.jpg"
+        src="/images/home/hero-espalda-hojas.jpg"
         alt="Espalda iluminada con sombras de hojas en el estudio de tatuajes de Alcalá de Henares"
         fill
         priority
@@ -225,7 +225,7 @@ export function Process() {
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand-200 lg:sticky lg:top-24">
-            <Image src="/images/Tatuajes.avif" alt="Detalle de un tatuaje realizado en Sundemon" fill className="object-cover object-[center_65%]" sizes="(max-width: 1024px) 100vw, 40vw" />
+            <Image src="/images/tatuajes/estilos/fine-line.avif" alt="Detalle de un tatuaje realizado en Sundemon" fill className="object-cover object-[center_65%]" sizes="(max-width: 1024px) 100vw, 40vw" />
             <div className="absolute inset-x-5 bottom-5 rounded-lg bg-ink-900/75 p-4 text-white-warm backdrop-blur-sm">
               <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-200 uppercase">Sundemon</p>
               <p className="mt-2 font-display text-lg">Tiempo para hacerlo bien.</p>

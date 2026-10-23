@@ -14,7 +14,7 @@ export const siteUrl = new URL(`${parsedSiteUrl.origin}/`);
 export const siteName = "Sundemon Tattoo Studio";
 export const siteDescription =
   "Estudio de tatuajes de autor en Alcalá de Henares. Diseños personalizados, fine line y micro-trazo con atención cercana.";
-export const socialImage = "/images/EstudioTatuajesAlcalaDeHenares.avif";
+export const socialImage = "/images/seo/social-share.avif";
 export const isIndexable =
   process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview";
 

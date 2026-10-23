@@ -12,7 +12,7 @@ const styles = [
       "Son tatuajes ligeros a la vista, pero con una gran carga simbólica y emocional.",
       "Si buscas un diseño delicado, íntimo y con sensibilidad, este puede ser tu estilo.",
     ],
-    image: "/images/Tatuajes.avif",
+    image: "/images/tatuajes/estilos/fine-line.avif",
     position: "object-[center_65%]",
   },
   {
@@ -23,7 +23,7 @@ const styles = [
       "El microrealismo transforma imágenes reales en pequeñas obras de arte llenas de precisión y detalle. Cada pieza busca capturar la esencia de aquello que deseas recordar, creando un impacto visual único.",
       "Si buscas inmortalizar un rostro, un recuerdo o algo especial con la mayor fidelidad posible a la realidad, este puede ser tu estilo.",
     ],
-    image: "/images/H1Tatuajes.avif",
+    image: "/images/tatuajes/estilos/microrealismo.avif",
     position: "object-[58%_55%]",
   },
   {
@@ -35,7 +35,7 @@ const styles = [
       "A diferencia del microrealismo, este estilo nos permite explorar cada detalle con mayor profundidad, buscando un impacto visual único y una representación fiel de la realidad.",
       "Si buscas una pieza que destaque por su fuerza, precisión y riqueza de detalles, este puede ser tu estilo.",
     ],
-    image: "/images/Edificio.jpg",
+    image: "/images/tatuajes/estilos/realismo.jpg",
     position: "object-[center_55%]",
   },
   {
@@ -47,7 +47,7 @@ const styles = [
       "Buscamos expresar mucho con poco, creando composiciones donde cada línea, forma y detalle tiene una intención. El resultado son piezas originales que cuentan historias de una manera diferente.",
       "Si buscas romper con lo convencional, explorar tu imaginación y descubrir nuevas formas de expresión, este puede ser tu estilo.",
     ],
-    image: "/images/DSC_0208-2.jpg",
+    image: "/images/tatuajes/estilos/conceptual.jpg",
     position: "object-[center_35%]",
   },
   {
@@ -59,7 +59,7 @@ const styles = [
       "Este estilo nos permite dar vida a tus personajes favoritos, capturando no solo su apariencia, sino también la esencia, las emociones y los valores que representan para ti.",
       "Si alguna historia te ha marcado, te has identificado con un personaje o simplemente te apasiona el universo del anime, este puede ser tu estilo.",
     ],
-    image: "/images/Artistas/Jhoan.avif",
+    image: "/images/equipo/jhoan.avif",
     position: "object-[center_30%]",
   },
 ];

@@ -73,7 +73,7 @@ export function GalleryFilter() {
           >
             <div className={`relative ${index === 0 && activeFilter === "all" ? "aspect-[4/5] h-full" : "aspect-[1.55]"}`}>
               <Image
-                src="/images/estudio.jpeg"
+                src="/images/estudio/galeria-estudio.jpeg"
                 alt={`${item.title}, trabajo de tatuaje de Sundemon en Alcalá de Henares`}
                 fill
                 className={`object-cover brightness-[0.78] transition-transform duration-300 group-hover:scale-105 ${item.position}`}

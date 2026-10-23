@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const styles = [
   {
@@ -59,6 +59,80 @@ const styles = [
   },
 ];
 
+function StyleGallery({ styleName, images }: { styleName: string; images: string[] }) {
+  const trackRef = useRef<HTMLUListElement | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const scrollTrack = (direction: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * track.clientWidth * 0.8, behavior: "smooth" });
+  };
+
+  const moveLightbox = useCallback(
+    (direction: number) => {
+      setOpenIndex((current) => (current === null ? null : (current + direction + images.length) % images.length));
+    },
+    [images.length],
+  );
+
+  useEffect(() => {
+    if (openIndex === null) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenIndex(null);
+      if (event.key === "ArrowLeft") moveLightbox(-1);
+      if (event.key === "ArrowRight") moveLightbox(1);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [openIndex, moveLightbox]);
+
+  const arrowClass = "flex size-11 items-center justify-center rounded-full border border-earth-700/30 text-lg text-earth-700 transition-colors hover:bg-sand-100 focus-visible:outline-2 focus-visible:outline-copper-500";
+
+  return (
+    <div className="mt-10">
+      <div className="flex items-center justify-between">
+        <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Trabajos · {images.length} {images.length === 1 ? "pieza" : "piezas"}</p>
+        {images.length > 1 && (
+          <div className="flex gap-2">
+            <button type="button" onClick={() => scrollTrack(-1)} aria-label="Fotos anteriores" className={arrowClass}><span aria-hidden="true">←</span></button>
+            <button type="button" onClick={() => scrollTrack(1)} aria-label="Fotos siguientes" className={arrowClass}><span aria-hidden="true">→</span></button>
+          </div>
+        )}
+      </div>
+      <ul ref={trackRef} className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]">
+        {images.map((src, index) => (
+          <li key={src} className="w-[68%] shrink-0 snap-start sm:w-[40%] lg:w-[28%]">
+            <button type="button" onClick={() => setOpenIndex(index)} aria-label={`Ampliar tatuaje ${index + 1} de ${images.length}, estilo ${styleName}`} className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden rounded-lg bg-sand-200 focus-visible:outline-2 focus-visible:outline-copper-500">
+              <Image src={src} alt={`Tatuaje de estilo ${styleName} ${index + 1}, realizado en Sundemon`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 68vw, (max-width: 1024px) 40vw, 28vw" />
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {openIndex !== null && (
+        <div role="dialog" aria-modal="true" aria-label={`Tatuajes de estilo ${styleName}`} className="fixed inset-0 z-50 flex items-center justify-center bg-ink-900/90 p-4 backdrop-blur-sm" onClick={() => setOpenIndex(null)}>
+          <div className="relative h-full max-h-[90vh] w-full max-w-4xl" onClick={(event) => event.stopPropagation()}>
+            <Image src={images[openIndex]} alt={`Tatuaje de estilo ${styleName} ${openIndex + 1}, realizado en Sundemon`} fill priority className="object-contain" sizes="(max-width: 1024px) 100vw, 896px" />
+          </div>
+          <button type="button" onClick={() => setOpenIndex(null)} aria-label="Cerrar" className="absolute top-4 right-4 flex size-11 items-center justify-center rounded-full border border-white/50 text-2xl text-white-warm focus-visible:outline-2 focus-visible:outline-white">×</button>
+          {images.length > 1 && (
+            <>
+              <button type="button" onClick={(event) => { event.stopPropagation(); moveLightbox(-1); }} aria-label="Foto anterior" className="absolute left-3 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-ink-900/40 text-xl text-white-warm focus-visible:outline-2 focus-visible:outline-white sm:left-6"><span aria-hidden="true">←</span></button>
+              <button type="button" onClick={(event) => { event.stopPropagation(); moveLightbox(1); }} aria-label="Foto siguiente" className="absolute right-3 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 bg-ink-900/40 text-xl text-white-warm focus-visible:outline-2 focus-visible:outline-white sm:right-6"><span aria-hidden="true">→</span></button>
+            </>
+          )}
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 font-sans text-xs text-white-warm/80">{openIndex + 1} / {images.length}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 type TattooStylesProps = {
   galleries: Record<string, string[]>;
 };
@@ -115,13 +189,7 @@ export function TattooStyles({ galleries }: TattooStylesProps) {
           <div className="mt-4 max-w-2xl space-y-3 font-sans text-sm leading-6 text-ink-900/65">
             {activeStyle.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-            {activeImages.map((src, index) => (
-              <li key={src} className="relative aspect-[4/5] overflow-hidden rounded-lg bg-sand-200">
-                <Image src={src} alt={`Tatuaje de estilo ${activeStyle.name} ${index + 1}, realizado en Sundemon`} fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
-              </li>
-            ))}
-          </ul>
+          <StyleGallery key={activeStyle.folder} styleName={activeStyle.name} images={activeImages} />
           <p className="mt-10 border-t border-sand-300/70 pt-5 font-sans text-xs leading-5 text-ink-900/55">Cada proyecto empieza con una referencia, una pregunta o simplemente una sensación. El diseño final se construye contigo.</p>
         </article>
       </div>

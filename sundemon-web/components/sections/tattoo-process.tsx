@@ -4,9 +4,12 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type ProcessStep = {
+  headline: string;
+  subheadline: string;
   title: string;
   description: string;
-  detail: string;
+  detail?: string;
+  alt: string;
   image: string;
   position: string;
 };
@@ -15,32 +18,42 @@ const baseImage = "/images/DetalleTatuajes/DetalleBase.avif";
 
 const processSteps: ProcessStep[] = [
   {
-    title: "Reserva & Escucha",
-    description: "Nos cuentas tu idea, referencias y el lugar de tu cuerpo que quieres habitar.",
-    detail: "Todo empieza por entenderte, no por elegir una plantilla.",
-    image: "/images/DetalleTatuajes/TatuajesDetalle1.avif",
-    position: "object-[center_55%]",
+    headline: "Consulta tu tatuaje sin compromiso",
+    subheadline: "En SUNDEMOM, antes de diseñar, escuchamos.",
+    title: "Reserva tu consulta",
+    description: "Toda gran idea merece ser escuchada.",
+    detail: "Cuéntanos qué tienes en mente. Te ayudaremos a dar forma a tu idea, explorando juntos las posibilidades de diseño y la zona de tu cuerpo que mejor se adapte a tu tatuaje.",
+    alt: "Consulta tu tatuaje sin compromiso: en SUNDEMOM, antes de diseñar, escuchamos",
+    image: "/images/DSC_0051-2.jpg",
+    position: "object-[center_50%]",
   },
   {
-    title: "Consulta & Co-diseño",
-    description: "Aterrizamos el concepto y construimos una propuesta pensada para ti.",
-    detail: "Probamos proporciones, composición y ritmo hasta que el diseño se siente tuyo.",
-    image: "/images/DetalleTatuajes/TatuajeDetalle2.avif",
-    position: "object-[center_55%]",
+    headline: "Diseñamos contigo",
+    subheadline: "Tu idea, nuestra experiencia, una obra única.",
+    title: "Preparamos tu diseño",
+    description: "En esta etapa, te invitamos a sentarte junto a uno de nuestros artistas para diseñar tu tatuaje en directo, participando en cada decisión hasta encontrar una composición que refleje lo que realmente deseas llevar en tu piel.",
+    alt: "Diseñamos contigo el tatuaje en una tableta",
+    image: "/images/DSC_0075-2.jpg",
+    position: "object-[center_50%]",
   },
   {
-    title: "La Sesión",
-    description: "El día llega con calma, precisión y todo preparado para disfrutar del proceso.",
-    detail: "Preparamos el espacio y trabajamos con atención en cada trazo.",
-    image: "/images/DetalleTatuajes/TatuajeDetalle3.avif",
-    position: "object-[center_55%]",
+    headline: "Tatuamos con calma",
+    subheadline: "Un momento para disfrutar, una huella para toda la vida.",
+    title: "La sesión",
+    description: "Sabemos que cada tatuaje dejará una marca permanente en tu piel. Por eso, cuidamos cada paso del proceso para que llegues a este día con seguridad, confianza y tranquilidad.",
+    alt: "Tatuadora trabajando con calma durante una sesión",
+    image: "/images/DSC_0002-2.jpg",
+    position: "object-[center_50%]",
   },
   {
-    title: "Curación & Control",
-    description: "Te acompañamos después para cuidar la pieza y verla evolucionar contigo.",
-    detail: "La relación no termina al salir del estudio: seguimos disponibles para tus preguntas.",
-    image: "/images/DetalleTatuajes/TatuajeDetalle4.avif",
-    position: "object-[center_55%]",
+    headline: "Acompañamos tu cicatrización",
+    subheadline: "Nuestro compromiso va más allá del tatuaje.",
+    title: "Curación y control",
+    description: "Nuestro compromiso va más allá del tatuaje.",
+    detail: "Una obra no está terminada hasta que tu piel ha cicatrizado correctamente. Por eso, en SUNDEMOM seguimos a tu lado después de cada sesión, acompañándote durante el proceso de cicatrización y asesorándote sobre los cuidados necesarios.",
+    alt: "Tatuaje recién hecho protegido durante la cicatrización",
+    image: "/images/DSC_0079-2.jpg",
+    position: "object-[center_50%]",
   },
 ];
 
@@ -119,7 +132,7 @@ export function TattooProcess() {
           <div className="relative h-full w-full overflow-hidden bg-ink-900">
               <Image
                 src={displayedImage}
-                alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"}
+                alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemon antes de comenzar"}
                 fill
                 className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`}
                 sizes="(min-width: 1024px) calc(100vw - 1rem), 1px"
@@ -131,10 +144,10 @@ export function TattooProcess() {
                 <div className="max-w-2xl text-right">
                   <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white uppercase">El proceso</p>
                   <h2 id="process-title-desktop" className="mt-3 font-display text-4xl leading-tight text-white sm:text-5xl">
-                    Una buena pieza se construye paso a paso
+                    {activeProcess?.headline ?? processSteps[0].headline}
                   </h2>
                   <p className="mt-4 ml-auto max-w-xl font-sans text-sm leading-6 text-white/85">
-                    Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje.
+                    {activeProcess?.subheadline ?? processSteps[0].subheadline}
                   </p>
                 </div>
               </div>
@@ -150,9 +163,11 @@ export function TattooProcess() {
                   <p className="mt-4 font-sans text-sm leading-6 text-white/90 sm:text-base">
                     {activeProcess?.description ?? processSteps[0].description}
                   </p>
-                  <p className="mt-4 border-l-2 border-white pl-4 font-sans text-sm leading-6 text-white/75">
-                    {activeProcess?.detail ?? processSteps[0].detail}
-                  </p>
+                  {(activeProcess?.detail ?? (activeProcess ? undefined : processSteps[0].detail)) && (
+                    <p className="mt-4 border-l-2 border-white pl-4 font-sans text-sm leading-6 text-white/75">
+                      {activeProcess?.detail ?? processSteps[0].detail}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -168,12 +183,12 @@ export function TattooProcess() {
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:hidden lg:px-8">
         <div className="max-w-2xl">
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
-          <h2 id="process-title-mobile" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Una buena pieza se construye paso a paso</h2>
-          <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje.</p>
+          <h2 id="process-title-mobile" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">{activeProcess?.headline ?? "Una buena pieza se construye paso a paso"}</h2>
+          <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">{activeProcess?.subheadline ?? "Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje."}</p>
         </div>
 
         <div className="relative mt-12 min-h-[560px] overflow-hidden rounded-xl bg-sand-200 shadow-warm sm:min-h-[620px]">
-          <Image src={displayedImage} alt={activeProcess ? activeProcess.title : "Piel limpia sobre la camilla de Sundemon antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="(min-width: 1152px) 1104px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" loading={isDesktopViewport === false ? "eager" : "lazy"} />
+          <Image src={displayedImage} alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemon antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="(min-width: 1152px) 1104px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" loading={isDesktopViewport === false ? "eager" : "lazy"} />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/55" />
           <div className="absolute inset-x-3 bottom-3 lg:hidden">
             {activeStep === null ? (
@@ -198,7 +213,7 @@ export function TattooProcess() {
                   <button type="button" onClick={() => selectStep(null)} aria-label="Cerrar detalle" className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white/60 text-xl font-light leading-none focus-visible:outline-2 focus-visible:outline-white">×</button>
                 </div>
                 <p className="mt-3 font-sans text-sm leading-6 text-sand-100">{activeProcess?.description}</p>
-                <p className="mt-3 border-l-2 border-forest-600 pl-3 font-sans text-xs leading-5 text-sand-200">{activeProcess?.detail}</p>
+                {activeProcess?.detail && <p className="mt-3 border-l-2 border-forest-600 pl-3 font-sans text-xs leading-5 text-sand-200">{activeProcess.detail}</p>}
                 <div className="mt-4 flex items-center justify-between border-t border-white/20 pt-3">
                   <button type="button" onClick={() => moveToStep(-1)} aria-label="Paso anterior" className="flex size-9 items-center justify-center rounded-full border border-white/50 text-lg focus-visible:outline-2 focus-visible:outline-white">←</button>
                   <span className="font-sans text-xs text-sand-200">Desliza por los pasos</span>

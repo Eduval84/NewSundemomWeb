@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
+import { getStyleImages } from "@/lib/tattoo-gallery";
 import { Footer, Header } from "@/components/sections/landing-page";
 import { TattooProcess } from "@/components/sections/tattoo-process";
 import { TattooStyles } from "@/components/sections/tattoo-styles";
@@ -14,6 +15,10 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function TattoosPage() {
+  const galleries = Object.fromEntries(
+    ["LineaFina", "MicroRealismo", "Realismo", "Conceptual", "Anime"].map((folder) => [folder, getStyleImages(folder)]),
+  );
+
   return (
     <>
       <Header />
@@ -47,7 +52,7 @@ export default function TattoosPage() {
             </div>
           </div>
         </section>
-        <TattooStyles />
+        <TattooStyles galleries={galleries} />
         <TattooProcess />
         <section aria-labelledby="tattoos-cta-title" className="border-y border-sand-300/70 bg-sand-100">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8 lg:py-24">

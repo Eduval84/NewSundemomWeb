@@ -31,7 +31,8 @@ const processSteps: ProcessStep[] = [
     headline: "Diseñamos contigo",
     subheadline: "Tu idea, nuestra experiencia, una obra única.",
     title: "Preparamos tu diseño",
-    description: "En esta etapa, te invitamos a sentarte junto a uno de nuestros artistas para diseñar tu tatuaje en directo, participando en cada decisión hasta encontrar una composición que refleje lo que realmente deseas llevar en tu piel.",
+    description: "Tu idea cobra vida, y tú formas parte de cada detalle.",
+    detail: "Te invitamos a compartir un espacio creativo junto a uno de nuestros artistas, donde daremos forma a tu tatuaje en directo. Participarás en cada decisión, explorando juntos las posibilidades hasta encontrar un diseño que conecte contigo y refleje lo que realmente deseas llevar en tu piel.",
     alt: "Diseñamos contigo el tatuaje en una tableta",
     image: "/images/tatuajes/proceso/2-diseno-contigo.avif",
     position: "object-[center_50%]",
@@ -40,7 +41,8 @@ const processSteps: ProcessStep[] = [
     headline: "Tatuamos con calma",
     subheadline: "Un momento para disfrutar, una huella para toda la vida.",
     title: "La sesión",
-    description: "Sabemos que cada tatuaje dejará una marca permanente en tu piel. Por eso, cuidamos cada paso del proceso para que llegues a este día con seguridad, confianza y tranquilidad.",
+    description: "Un momento para disfrutar con calma y confianza.",
+    detail: "Sabemos que cada tatuaje dejará una huella permanente en tu piel. Por eso, cuidamos cada detalle del proceso para que vivas este momento con seguridad, tranquilidad y confianza. Después de dar forma a tu idea, llega el momento de hacerla realidad. Una experiencia pensada para ti, donde podrás disfrutar del arte de tatuarte sin prisas.",
     alt: "Tatuadora trabajando con calma durante una sesión",
     image: "/images/tatuajes/proceso/3-sesion.avif",
     position: "object-[center_50%]",
@@ -132,7 +134,7 @@ export function TattooProcess() {
           <div className="relative h-full w-full overflow-hidden bg-ink-900">
               <Image
                 src={displayedImage}
-                alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemon antes de comenzar"}
+                alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemom antes de comenzar"}
                 fill
                 className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`}
                 sizes="(min-width: 1024px) calc(100vw - 1rem), 1px"
@@ -188,7 +190,7 @@ export function TattooProcess() {
         </div>
 
         <div className="relative mt-12 min-h-[560px] overflow-hidden rounded-xl bg-sand-200 shadow-warm sm:min-h-[620px]">
-          <Image src={displayedImage} alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemon antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="(min-width: 1152px) 1104px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" loading={isDesktopViewport === false ? "eager" : "lazy"} />
+          <Image src={displayedImage} alt={activeProcess ? activeProcess.alt : "Piel limpia sobre la camilla de Sundemom antes de comenzar"} fill className={`object-cover transition-all duration-700 ease-out ${isFading ? "scale-[1.04] opacity-0 blur-[2px]" : "scale-100 opacity-100 blur-0"} ${activeProcess?.position ?? "object-center"}`} sizes="(min-width: 1152px) 1104px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)" loading={isDesktopViewport === false ? "eager" : "lazy"} />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/55" />
           <div className="absolute inset-x-3 bottom-3 lg:hidden">
             {activeStep === null ? (

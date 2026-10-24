@@ -6,7 +6,7 @@ import { Footer, Header, Team } from "@/components/sections/landing-page";
 export const metadata: Metadata = createPageMetadata({
   title: "El estudio en Alcalá de Henares",
   description:
-    "Conoce el estudio de tatuajes Sundemon en Alcalá de Henares, su equipo y una forma de trabajar basada en la calma y la escucha.",
+    "Conoce el estudio de tatuajes Sundemom en Alcalá de Henares, su equipo y una forma de trabajar basada en la calma y la escucha.",
   path: "/estudio",
 });
 
@@ -27,7 +27,7 @@ export default function StudioPage() {
                 Un lugar para crear con calma.
               </h1>
               <p className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-sand-100 sm:text-lg">
-                Sundemon es un estudio de tatuajes y un espacio creativo donde las ideas encuentran tiempo, atención y una forma propia.
+                Sundemom es un estudio de tatuajes y un espacio creativo donde las ideas encuentran tiempo, atención y una forma propia.
               </p>
             </div>
           </div>

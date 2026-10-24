@@ -15,7 +15,7 @@ const essentialLinks = [
     label: "01 / Archivo",
   },
   {
-    title: "Sundemon",
+    title: "Sundemom",
     description: "Conoce el estudio, nuestra filosofía y la calma detrás de cada trazo.",
     href: "/estudio",
     image: "/images/estudio/hero-cuenco-tibetano.avif",
@@ -93,10 +93,10 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-sand-300/60 bg-white-warm">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Sundemon Tattoo Studio, inicio">
+        <Link href="/" className="flex items-center gap-3" aria-label="Sundemom Tattoo Studio, inicio">
           <Image
             src="/images/brand/logo.png"
-            alt="Sundemon Tattoo Studio"
+            alt="Sundemom Tattoo Studio"
             width={156}
             height={58}
             className="h-8 w-[92px] object-contain mix-blend-multiply sm:h-11 sm:w-[150px]"
@@ -105,7 +105,7 @@ export function Header() {
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase md:flex">
           <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
-          <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
+          <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemom</Link>
           <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
         </nav>
         <div className="hidden flex-col items-end gap-1 md:flex">
@@ -129,7 +129,7 @@ export function Header() {
             <div className="absolute right-0 top-[calc(100%+0.75rem)] z-10 w-[min(280px,calc(100vw-2rem))] border border-sand-300 bg-white-warm p-5 shadow-[0_12px_30px_rgba(45,38,31,0.12)]">
               <nav aria-label="Navegación móvil" className="flex flex-col gap-4 font-sans text-sm font-semibold tracking-[0.08em] text-ink-900 uppercase">
                 <Link className="border-b border-sand-300/70 pb-3 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
-                <Link className="border-b border-sand-300/70 pb-3 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemon</Link>
+                <Link className="border-b border-sand-300/70 pb-3 transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemom</Link>
                 <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
               </nav>
             </div>
@@ -187,7 +187,7 @@ function EssentialCard({ item, horizontal = false }: { item: (typeof essentialLi
   return (
     <Link href={item.href} className={`group flex min-h-0 flex-col overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/60 focus-visible:outline-2 focus-visible:outline-copper-500 ${horizontal ? "lg:flex-row-reverse" : ""}`}>
       <div className={`relative aspect-[1.35] shrink-0 overflow-hidden bg-sand-200 ${horizontal ? "lg:aspect-auto lg:min-h-[150px] lg:w-[34%]" : "lg:aspect-auto lg:flex-1"}`}>
-        <Image src={item.image} alt={`Sundemon Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 1024px) 100vw, 33vw" />
+        <Image src={item.image} alt={`Sundemom Tattoo Studio, ${item.title.toLowerCase()} en Alcalá de Henares`} fill className={`object-cover transition-transform duration-300 group-hover:scale-105 ${item.imageClass}`} sizes="(max-width: 1024px) 100vw, 33vw" />
         <span className="absolute right-3 top-3 rounded-full bg-white-warm/85 px-2.5 py-1 font-sans text-[9px] font-semibold tracking-[0.1em] text-earth-700 uppercase">{item.label}</span>
       </div>
       <div className="p-5">
@@ -225,9 +225,9 @@ export function Process() {
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand-200 lg:sticky lg:top-24">
-            <Image src="/images/tatuajes/proceso/3-sesion.avif" alt="Detalle de un tatuaje realizado en Sundemon" fill className="object-cover object-[center_65%]" sizes="(max-width: 1024px) 100vw, 40vw" />
+            <Image src="/images/tatuajes/proceso/3-sesion.avif" alt="Detalle de un tatuaje realizado en Sundemom" fill className="object-cover object-[center_65%]" sizes="(max-width: 1024px) 100vw, 40vw" />
             <div className="absolute inset-x-5 bottom-5 rounded-lg bg-ink-900/75 p-4 text-white-warm backdrop-blur-sm">
-              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-200 uppercase">Sundemon</p>
+              <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-sand-200 uppercase">Sundemom</p>
               <p className="mt-2 font-display text-lg">Tiempo para hacerlo bien.</p>
             </div>
           </div>
@@ -280,7 +280,7 @@ export function Team() {
     <section aria-labelledby="team-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="flex flex-wrap items-end justify-between gap-5">
         <div>
-          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El equipo Sundemon</p>
+          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El equipo Sundemom</p>
           <h2 id="team-title" className="mt-3 font-display text-3xl text-earth-700">Una red de artistas, una forma precisa y humana de trabajar.</h2>
         </div>
       </div>
@@ -288,10 +288,10 @@ export function Team() {
         {artists.map(([name, image]) => (
           <article key={name} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
             <div className="relative aspect-[4/5] overflow-hidden bg-sand-200">
-              <Image src={image} alt={`${name}, artista de Sundemon Tattoo Studio`} fill className={`object-center object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-110 ${name === "Enrique" ? "object-[center_20%]" : ""}`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+              <Image src={image} alt={`${name}, artista de Sundemom Tattoo Studio`} fill className={`object-center object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-active:scale-110 ${name === "Enrique" ? "object-[center_20%]" : ""}`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
             </div>
             <div className="p-5">
-              <p className="font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Artista Sundemon</p>
+              <p className="font-sans text-[10px] font-semibold tracking-[0.12em] text-copper-500 uppercase">Artista Sundemom</p>
               <h3 className="mt-2 font-display text-xl text-earth-700">{name}</h3>
             </div>
           </article>
@@ -306,7 +306,7 @@ export function Gallery() {
     <section id="tatuajes" aria-labelledby="gallery-title" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Archivo Sundemon</p>
+          <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Archivo Sundemom</p>
           <h2 id="gallery-title" className="mt-3 font-display text-3xl text-earth-700">Tatuajes reales, personas reales</h2>
         </div>
       </div>
@@ -350,7 +350,7 @@ export function Footer() {
           <Link href="mailto:contacto@sundemom.es" target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
         </div>
         <div className="lg:pt-2">
-          <p className="font-display text-xl tracking-[0.14em]">SUNDEMON</p>
+          <p className="font-display text-xl tracking-[0.14em]">SUNDEMOM</p>
           <nav aria-label="Enlaces del pie de página" className="mt-7 flex flex-col gap-3 font-sans text-sm text-sand-300">
             <Link className="hover:text-white-warm" href="/tatuajes">Tatuajes</Link>
             <Link className="hover:text-white-warm" href="/estudio">El estudio</Link>

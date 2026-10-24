@@ -5,7 +5,7 @@ import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { CookieConsent } from "@/components/privacy/cookie-consent";
 import "./globals.css";
 
-const defaultTitle = "Sundemon Tattoo Studio | Tatuajes en Alcalá de Henares";
+const defaultTitle = "Sundemom Tattoo Studio | Tatuajes en Alcalá de Henares";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
     default: defaultTitle,
-    template: "%s | Sundemon Tattoo Studio",
+    template: "%s | Sundemom Tattoo Studio",
   },
   description: siteDescription,
   alternates: {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: socialImage,
-        alt: "Interior de Sundemon Tattoo Studio en Alcalá de Henares",
+        alt: "Interior de Sundemom Tattoo Studio en Alcalá de Henares",
       },
     ],
   },

@@ -158,7 +158,7 @@ const allTestimonials: Testimonial[] = [
     details: "4 reseñas · 1 foto",
     date: "Hace 5 meses",
     quote:
-      "Tatuarse en SUNDEMON es una experiencia única sin duda. John es un profesional enorme que hace que te dé una tatuaje increíble. Escucha, acompaña en la idea y te ayuda siempre a darle forma con la mejor composición. Llevo muchos años.",
+      "Tatuarse en SUNDEMOM es una experiencia única sin duda. John es un profesional enorme que hace que te dé una tatuaje increíble. Escucha, acompaña en la idea y te ayuda siempre a darle forma con la mejor composición. Llevo muchos años.",
     ownerReply:
       "Alba, gracias por tu hermoso comentario. Nos llena enormemente saber que te hemos acompañado estos años, creciendo juntos. Agradecerte la confianza depositada en cada cicatriz que hemos creado juntos.",
   },

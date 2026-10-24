@@ -120,7 +120,7 @@ export async function submitContact(
       from: sender,
       to: email,
       replyTo: "contacto@sundemom.es",
-      subject: "Confirmación de tu reserva con Sundemon",
+      subject: "Confirmación de tu reserva con Sundemom",
       text: `Hola, ${name}:
 
 Hemos recibido correctamente tu consulta para Sundemom Tattoo Studio.

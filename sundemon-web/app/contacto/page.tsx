@@ -6,7 +6,7 @@ import { FAQ, Footer, Header } from "@/components/sections/landing-page";
 export const metadata: Metadata = createPageMetadata({
   title: "Contacto y citas",
   description:
-    "Pide cita con Sundemon Tattoo Studio en Alcalá de Henares. Cuéntanos tu idea de tatuaje o resuelve tus dudas sobre el proceso.",
+    "Pide cita con Sundemom Tattoo Studio en Alcalá de Henares. Cuéntanos tu idea de tatuaje o resuelve tus dudas sobre el proceso.",
   path: "/contacto",
 });
 

@@ -7,11 +7,12 @@ const styles = [
   {
     name: "Fine line",
     folder: "LineaFina",
-    eyebrow: "Línea fina",
-    description: "Este estilo se caracteriza por sus líneas finas y precisas, dando vida a piezas sutiles, elegantes y llenas de intención.",
+    eyebrow: "FINE LINE · LÍNEA FINA",
+    description: "La delicadeza también puede dejar huella.",
     body: [
-      "Son tatuajes ligeros a la vista, pero con una gran carga simbólica y emocional.",
-      "Si buscas un diseño delicado, íntimo y con sensibilidad, este puede ser tu estilo.",
+      "El Fine Line es un estilo que destaca por la precisión y sutileza de sus líneas, dando vida a composiciones elegantes, delicadas y llenas de significado.",
+      "Cada detalle tiene su intención, creando piezas visualmente ligeras que pueden transmitir grandes historias y emociones.",
+      "Si buscas un tatuaje sutil, íntimo y capaz de expresar mucho con poco, este puede ser tu estilo.",
     ],
   },
   {
@@ -109,7 +110,7 @@ function StyleGallery({ styleName, images }: { styleName: string; images: string
         {images.map((src, index) => (
           <li key={src} className="w-[68%] shrink-0 snap-start sm:w-[40%] lg:w-[28%]">
             <button type="button" onClick={() => setOpenIndex(index)} aria-label={`Ampliar tatuaje ${index + 1} de ${images.length}, estilo ${styleName}`} className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden rounded-lg bg-sand-200 focus-visible:outline-2 focus-visible:outline-copper-500">
-              <Image src={src} alt={`Tatuaje de estilo ${styleName} ${index + 1}, realizado en Sundemon`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 68vw, (max-width: 1024px) 40vw, 28vw" />
+              <Image src={src} alt={`Tatuaje de estilo ${styleName} ${index + 1}, realizado en Sundemom`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 68vw, (max-width: 1024px) 40vw, 28vw" />
             </button>
           </li>
         ))}
@@ -118,7 +119,7 @@ function StyleGallery({ styleName, images }: { styleName: string; images: string
       {openIndex !== null && (
         <div role="dialog" aria-modal="true" aria-label={`Tatuajes de estilo ${styleName}`} className="fixed inset-0 z-50 flex items-center justify-center bg-ink-900/90 p-4 backdrop-blur-sm" onClick={() => setOpenIndex(null)}>
           <div className="relative h-full max-h-[90vh] w-full max-w-4xl" onClick={(event) => event.stopPropagation()}>
-            <Image src={images[openIndex]} alt={`Tatuaje de estilo ${styleName} ${openIndex + 1}, realizado en Sundemon`} fill priority className="object-contain" sizes="(max-width: 1024px) 100vw, 896px" />
+            <Image src={images[openIndex]} alt={`Tatuaje de estilo ${styleName} ${openIndex + 1}, realizado en Sundemom`} fill priority className="object-contain" sizes="(max-width: 1024px) 100vw, 896px" />
           </div>
           <button type="button" onClick={() => setOpenIndex(null)} aria-label="Cerrar" className="absolute top-4 right-4 flex size-11 items-center justify-center rounded-full border border-white/50 text-2xl text-white-warm focus-visible:outline-2 focus-visible:outline-white">×</button>
           {images.length > 1 && (
@@ -160,7 +161,7 @@ export function TattooStyles({ galleries }: TattooStylesProps) {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Estilos</p>
-            <h2 id="styles-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">En 8 años, más de 1.000 personas han avalado nuestro trabajo</h2>
+            <h2 id="styles-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">En 9 años, más de 1.000 personas han avalado nuestro trabajo</h2>
             <p className="mt-4 font-sans text-sm leading-6 text-ink-900/65 sm:text-base">Hemos aprendido que el estilo importa, pero entenderte importa más. Explora algunos de los estilos que podemos ofrecerte</p>
           </div>
           <div className="flex items-center gap-2">

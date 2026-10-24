@@ -1,7 +1,7 @@
 import { absoluteUrl } from "@/lib/seo";
 
 export function GET() {
-  const content = `# Sundemon Tattoo Studio
+  const content = `# Sundemom Tattoo Studio
 
 > Estudio de tatuajes de autor en Alcalá de Henares, Madrid. Diseños personalizados, fine line y micro-trazo.
 

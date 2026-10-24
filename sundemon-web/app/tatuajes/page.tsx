@@ -10,7 +10,7 @@ import { TattooStyles } from "@/components/sections/tattoo-styles";
 export const metadata: Metadata = createPageMetadata({
   title: "Tatuajes en Alcalá de Henares",
   description:
-    "Tatuajes de autor en Alcalá de Henares: fine line, micro-trazo y diseños personalizados en Sundemon Tattoo Studio.",
+    "Tatuajes de autor en Alcalá de Henares: fine line, micro-trazo y diseños personalizados en Sundemom Tattoo Studio.",
   path: "/tatuajes",
 });
 
@@ -26,7 +26,7 @@ export default function TattoosPage() {
         <section aria-labelledby="tattoos-hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
           <Image
             src="/images/tatuajes/hero-escucha.avif"
-            alt="Tatuador de Sundemon escuchando a un cliente durante la consulta"
+            alt="Tatuador de Sundemom escuchando a un cliente durante la consulta"
             fill
             priority
             className="-z-20 -scale-x-100 object-cover object-[35%_30%]"

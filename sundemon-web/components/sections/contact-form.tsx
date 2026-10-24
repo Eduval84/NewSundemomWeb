@@ -72,8 +72,15 @@ export function ContactForm() {
           </select>
         </label>
         <label className="font-sans text-sm text-earth-700">
-          <span className="block min-h-5 sm:min-h-10">Disponibilidad para contactar</span>
-          <input name="availability" placeholder="Días y horarios en los que podemos contactarte" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
+          <span className="block min-h-5 sm:min-h-10">Mejor momento para contactar</span>
+          <select name="availability" defaultValue="" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm text-ink-900 outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30">
+            <option value="">Selecciona una franja</option>
+            <option>Por la mañana</option>
+            <option>A mediodía</option>
+            <option>Por la tarde</option>
+            <option>Al final de la tarde</option>
+            <option>Cualquier horario</option>
+          </select>
         </label>
       </div>
       <label className="block font-sans text-sm text-earth-700">
@@ -83,7 +90,7 @@ export function ContactForm() {
       </label>
       <label className="flex items-start gap-3 font-sans text-xs leading-5 text-ink-900/65">
         <input name="consent" type="checkbox" required className="mt-1 accent-earth-700" />
-        <span>Acepto que Sundemon use estos datos para responder a mi consulta. *</span>
+        <span>Acepto que Sundemom use estos datos para responder a mi consulta. *</span>
       </label>
       {state.message ? (
         <p role="status" className={state.status === "success" ? "text-sm text-earth-700" : "text-sm text-earth-500"}>

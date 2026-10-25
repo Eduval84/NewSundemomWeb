@@ -145,7 +145,7 @@ export function TattooProcess() {
               <div className="absolute inset-x-6 top-24 mx-auto flex max-w-7xl justify-end text-white sm:inset-x-10 lg:top-28 lg:px-8">
                 <div className="max-w-2xl text-right">
                   <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white uppercase">El proceso</p>
-                  <h2 id="process-title-desktop" className="mt-3 font-display text-4xl leading-tight text-white sm:text-5xl">
+                  <h2 id="process-title-desktop" className="mt-3 font-display text-4xl leading-tight text-white lg:text-5xl">
                     {activeProcess?.headline ?? processSteps[0].headline}
                   </h2>
                   <p className="mt-4 ml-auto max-w-xl font-sans text-sm leading-6 text-white/85">
@@ -159,10 +159,10 @@ export function TattooProcess() {
                   <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-white/75 uppercase">
                     Paso {activeStep === null ? 1 : activeStep + 1} de {processSteps.length}
                   </p>
-                  <h3 className="mt-3 font-display text-3xl text-white sm:text-4xl">
+                  <h3 className="mt-3 font-display text-3xl text-white lg:text-4xl">
                     {activeProcess?.title ?? processSteps[0].title}
                   </h3>
-                  <p className="mt-4 font-sans text-sm leading-6 text-white/90 sm:text-base">
+                  <p className="mt-4 font-sans text-sm leading-6 text-white/90 lg:text-base">
                     {activeProcess?.description ?? processSteps[0].description}
                   </p>
                   {(activeProcess?.detail ?? (activeProcess ? undefined : processSteps[0].detail)) && (
@@ -185,7 +185,7 @@ export function TattooProcess() {
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:hidden lg:px-8">
         <div className="max-w-2xl">
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
-          <h2 id="process-title-mobile" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">{activeProcess?.headline ?? "Una buena pieza se construye paso a paso"}</h2>
+          <h2 id="process-title-mobile" className="mt-3 font-display text-3xl text-earth-700 lg:text-4xl">{activeProcess?.headline ?? "Una buena pieza se construye paso a paso"}</h2>
           <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">{activeProcess?.subheadline ?? "Explora cada momento del proceso y descubre qué ocurre antes, durante y después de tu tatuaje."}</p>
         </div>
 

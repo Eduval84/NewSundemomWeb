@@ -72,15 +72,3 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
-
-@media (min-width: 640px) and (max-width: 1023px) {
-  .text-sm {
-    font-size: 1rem;
-    line-height: 1.75rem;
-  }
-
-  .text-xs {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-  }
-}

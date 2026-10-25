@@ -99,7 +99,7 @@ export function Header() {
             alt="Sundemom Tattoo Studio"
             width={156}
             height={58}
-            className="h-8 w-[92px] object-contain mix-blend-multiply sm:h-11 sm:w-[150px]"
+            className="h-8 w-[92px] object-contain mix-blend-multiply lg:h-11 lg:w-[150px]"
             priority
           />
         </Link>
@@ -142,7 +142,7 @@ export function Header() {
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 sm:min-h-[700px]">
+    <section aria-labelledby="hero-title" className="relative isolate min-h-[620px] overflow-hidden border-b border-sand-300/50 bg-ink-900 lg:min-h-[700px]">
       <Image
         src="/images/home/hero-espalda-hojas.avif"
         alt="Espalda iluminada con sombras de hojas en el estudio de tatuajes de Alcalá de Henares"
@@ -152,16 +152,16 @@ function Hero() {
         sizes="100vw"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-900/90 via-ink-900/65 to-ink-900/15" />
-      <div className="relative mx-auto flex min-h-[620px] max-w-6xl items-center px-4 py-16 sm:min-h-[700px] sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-[620px] max-w-6xl items-center px-4 py-16 lg:min-h-[700px] lg:px-8">
         <div className="max-w-2xl">
           <div className="font-sans text-[10px] font-semibold tracking-[0.12em] text-sand-200 uppercase">
             <span><Mark /> Alcalá de Henares</span>
           </div>
           <div className="mt-12 sm:mt-16">
-            <h1 id="hero-title" className="max-w-xl font-display text-5xl leading-[1.05] text-white-warm sm:text-7xl">
+            <h1 id="hero-title" className="max-w-xl font-display text-5xl leading-[1.05] text-white-warm lg:text-7xl">
               Estudio de tatuaje desde 2017
             </h1>
-            <h2 className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-sand-100 sm:text-lg">
+            <h2 className="mt-7 max-w-[50ch] font-sans text-base leading-7 text-sand-100 lg:text-lg">
               Tu historia en tu piel. Un espacio donde las ideas se convierten en tatuajes pensados para ti.
             </h2>
             <div className="mt-9 flex flex-wrap items-center gap-5">
@@ -220,7 +220,7 @@ export function Process() {
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">El proceso</p>
-          <h2 id="process-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">Una buena pieza se construye paso a paso</h2>
+          <h2 id="process-title" className="mt-3 font-display text-3xl text-earth-700 lg:text-4xl">Una buena pieza se construye paso a paso</h2>
           <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ink-900/65">Desde la primera conversación hasta la curación, cada parte importa. Queremos que sepas qué ocurre y por qué.</p>
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
@@ -233,7 +233,7 @@ export function Process() {
           </div>
           <ol className="divide-y divide-sand-300/70">
             {processSteps.map(([number, title, description, detail]) => (
-              <li key={number} className="grid gap-4 py-8 first:pt-0 sm:grid-cols-[72px_1fr]">
+              <li key={number} className="grid gap-4 py-8 first:pt-0 lg:grid-cols-[72px_1fr]">
                 <span className="font-display text-3xl text-copper-500">{number}</span>
                 <div>
                   <h3 className="font-display text-2xl text-earth-700">{title}</h3>
@@ -254,7 +254,7 @@ export function Philosophy() {
     <section id="estudio" aria-labelledby="philosophy-title" className="border-b border-sand-300/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div>
-          <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Cómo creamos tu tatuaje: escucha, precisión y acompañamiento</h2>
+          <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 lg:text-4xl">Cómo creamos tu tatuaje: escucha, precisión y acompañamiento</h2>
         </div>
         <div className="mt-10 grid gap-3 lg:grid-cols-4">
           {philosophyValues.map(({ number, title, heading, paragraphs }) => (
@@ -345,7 +345,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
         <div>
           <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Hablemos</p>
-          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">¿Tienes una idea en mente?</h2>
+          <h2 className="mt-4 max-w-xl font-display text-4xl leading-tight lg:text-5xl">¿Tienes una idea en mente?</h2>
           <p className="mt-5 max-w-lg font-sans text-sm leading-7 text-sand-300">Cuéntanosla. Las mejores piezas suelen comenzar con una conversación sencilla.</p>
           <Link href="mailto:contacto@sundemom.es" target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-full bg-forest-700 px-6 py-3.5 font-sans text-sm font-semibold text-cta-text transition-colors hover:bg-forest-600 focus-visible:outline-2 focus-visible:outline-sand-200">Cuéntanos tu idea ↗</Link>
         </div>

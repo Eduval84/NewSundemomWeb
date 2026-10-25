@@ -20,10 +20,10 @@ export default function ContactPage() {
             <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">
               Cita previa · Atención personalizada
             </p>
-            <h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight text-earth-700 sm:text-6xl">
+            <h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight text-earth-700 lg:text-6xl">
               Cuéntanos tu historia para empezar.
             </h1>
-            <p className="mt-6 max-w-xl font-sans text-base leading-7 text-ink-900/70 sm:text-lg">
+            <p className="mt-6 max-w-xl font-sans text-base leading-7 text-ink-900/70 lg:text-lg">
               No necesitas tenerlo todo decidido. Comparte tu idea, una referencia o simplemente lo que quieres sentir, y encontraremos juntos el siguiente paso.
             </p>
           </div>

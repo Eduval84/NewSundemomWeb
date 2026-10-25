@@ -63,7 +63,7 @@ export function GalleryFilter() {
           </button>
         ))}
       </div>
-      <div className="mt-9 grid gap-5 sm:grid-cols-2">
+      <div className="mt-9 grid gap-5 lg:grid-cols-2">
         {visibleItems.map((item, index) => (
           <article
             key={item.title}

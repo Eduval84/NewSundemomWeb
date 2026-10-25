@@ -27,7 +27,7 @@ export function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 lg:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
           <span className="block min-h-5 sm:min-h-10">Nombre completo *</span>
           <input name="name" required autoComplete="name" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
@@ -57,7 +57,7 @@ export function ContactForm() {
           <input name="bodyArea" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30" />
         </label>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 lg:grid-cols-2">
         <label className="font-sans text-sm text-earth-700">
           <span className="block min-h-5 sm:min-h-10">Estilo</span>
           <select name="style" defaultValue="" className="mt-2 w-full rounded-lg border border-sand-300 bg-white-warm px-4 py-3 text-sm text-ink-900 outline-none focus:border-copper-500 focus:ring-2 focus:ring-copper-500/30">

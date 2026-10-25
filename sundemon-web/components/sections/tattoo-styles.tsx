@@ -161,8 +161,8 @@ export function TattooStyles({ galleries }: TattooStylesProps) {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <p className="font-sans text-[10px] font-semibold tracking-[0.14em] text-copper-500 uppercase">Estilos</p>
-            <h2 id="styles-title" className="mt-3 font-display text-3xl text-earth-700 sm:text-4xl">En 9 años, más de 1.000 personas han avalado nuestro trabajo</h2>
-            <p className="mt-4 font-sans text-sm leading-6 text-ink-900/65 sm:text-base">Hemos aprendido que el estilo importa, pero entenderte importa más. Explora algunos de los estilos que podemos ofrecerte</p>
+            <h2 id="styles-title" className="mt-3 font-display text-3xl text-earth-700 lg:text-4xl">En 9 años, más de 1.000 personas han avalado nuestro trabajo</h2>
+            <p className="mt-4 font-sans text-sm leading-6 text-ink-900/65 lg:text-base">Hemos aprendido que el estilo importa, pero entenderte importa más. Explora algunos de los estilos que podemos ofrecerte</p>
           </div>
           <div className="flex items-center gap-2">
             <button type="button" onClick={showPrevious} aria-label="Estilo anterior" className="flex size-11 items-center justify-center rounded-full border border-earth-700/30 text-lg text-earth-700 transition-colors hover:bg-white-warm focus-visible:outline-2 focus-visible:outline-copper-500">

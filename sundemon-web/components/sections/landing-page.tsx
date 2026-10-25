@@ -103,16 +103,16 @@ export function Header() {
             priority
           />
         </Link>
-        <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase md:flex">
+        <nav aria-label="Navegación principal" className="hidden items-center gap-8 font-sans text-[11px] font-semibold tracking-[0.12em] text-ink-900 uppercase lg:flex">
           <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/tatuajes">Tatuajes</Link>
           <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/estudio">Sundemom</Link>
           <Link className="transition-colors hover:text-earth-500 focus-visible:outline-2 focus-visible:outline-copper-500" href="/contacto">Contacto</Link>
         </nav>
-        <div className="hidden flex-col items-end gap-1 md:flex">
+        <div className="hidden flex-col items-end gap-1 lg:flex">
           <PhoneAction />
           <EmailAction />
         </div>
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <div className="flex min-w-0 flex-col items-end gap-1">
             <PhoneAction />
             <EmailAction />
@@ -256,7 +256,7 @@ export function Philosophy() {
         <div>
           <h2 id="philosophy-title" className="text-center font-display text-3xl text-earth-700 sm:text-4xl">Cómo creamos tu tatuaje: escucha, precisión y acompañamiento</h2>
         </div>
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-3 lg:grid-cols-4">
           {philosophyValues.map(({ number, title, heading, paragraphs }) => (
             <article key={number} className="rounded-lg border border-sand-300/70 bg-sand-200/45 p-5">
               <div className="flex items-center justify-between">

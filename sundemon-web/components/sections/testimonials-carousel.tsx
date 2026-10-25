@@ -335,7 +335,7 @@ export function TestimonialsCarousel() {
           onPointerCancel={() => {
             swipeOrigin.current = null;
           }}
-          className="mt-9 grid touch-pan-y gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-9 grid touch-pan-y gap-4 lg:grid-cols-3"
           aria-live="polite"
         >
           {visibleTestimonials.map((testimonial) => {

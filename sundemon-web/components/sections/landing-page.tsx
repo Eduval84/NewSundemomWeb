@@ -284,7 +284,7 @@ export function Team() {
           <h2 id="team-title" className="mt-3 font-display text-3xl text-earth-700">Una red de artistas, una forma precisa y humana de trabajar.</h2>
         </div>
       </div>
-      <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-9 grid gap-5 lg:grid-cols-5">
         {artists.map(([name, image]) => (
           <article key={name} className="group overflow-hidden rounded-lg border border-sand-300/70 bg-white-warm/70">
             <div className="relative aspect-[4/5] overflow-hidden bg-sand-200">
